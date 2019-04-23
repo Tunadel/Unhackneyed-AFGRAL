@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Materials/smoke_shader.tres" type="Material" id=1]
 
 [sub_resource type="Curve" id=1]
-_data = [ Vector2( 0, 0 ), 0.0, 0.52484, 0, 0, Vector2( 1, 0 ), -2.90074, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0 ), 0.0, 0.52484, 0, 0, Vector2( 1, 0 ), -1.80789, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=2]
 curve = SubResource( 1 )
@@ -20,7 +20,7 @@ radial_accel = 0.2
 radial_accel_random = 0.5
 scale_curve = SubResource( 2 )
 
-[sub_resource type="SphereMesh" id=10]
+[sub_resource type="SphereMesh" id=4]
 material = ExtResource( 1 )
 radial_segments = 7
 rings = 6
@@ -31,6 +31,7 @@ rings = 6
 amount = 10
 lifetime = 5.0
 visibility_aabb = AABB( -1.33166, -1.19099, -1.1793, 2.66332, 2.38198, 2.35859 )
+local_coords = false
 process_material = SubResource( 3 )
-draw_pass_1 = SubResource( 10 )
+draw_pass_1 = SubResource( 4 )
 
