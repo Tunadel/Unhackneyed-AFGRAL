@@ -18,6 +18,11 @@ _global_script_class_icons={
 config/name="Unhackneyed"
 config/icon="res://icon.png"
 
+[display]
+
+mouse_cursor/custom_image="res://Ui/cursor-01.png"
+mouse_cursor/custom_image_hotspot=Vector2( 6, 6 )
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
