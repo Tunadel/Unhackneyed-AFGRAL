@@ -554,18 +554,18 @@ input_name = "uv"
 output_port_for_preview = 1
 texture = ExtResource( 4 )
 
-[sub_resource type="VisualShaderNodeVectorOp" id=33]
+[sub_resource type="VisualShaderNodeVectorOp" id=32]
 default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 0.6, 0.6, 0.6 ) ]
 operator = 2
 
-[sub_resource type="VisualShaderNodeScalarUniform" id=37]
+[sub_resource type="VisualShaderNodeScalarUniform" id=33]
 uniform_name = "vizualization"
 
-[sub_resource type="VisualShaderNodeScalarOp" id=38]
+[sub_resource type="VisualShaderNodeScalarOp" id=34]
 output_port_for_preview = 0
 operator = 2
 
-[sub_resource type="VisualShader" id=34]
+[sub_resource type="VisualShader" id=35]
 code = "shader_type spatial;
 uniform sampler2D tex_frg_3;uniform float vizualization;
 
@@ -611,26 +611,26 @@ void light() {
 
 }
 "
-graph_offset = Vector2( 111, 70 )
+graph_offset = Vector2( 59, 103 )
 nodes/fragment/0/position = Vector2( 800, 60 )
 nodes/fragment/2/node = SubResource( 30 )
 nodes/fragment/2/position = Vector2( 80, 160 )
 nodes/fragment/3/node = SubResource( 31 )
 nodes/fragment/3/position = Vector2( 260, 60 )
-nodes/fragment/5/node = SubResource( 33 )
+nodes/fragment/5/node = SubResource( 32 )
 nodes/fragment/5/position = Vector2( 440, 160 )
-nodes/fragment/6/node = SubResource( 37 )
+nodes/fragment/6/node = SubResource( 33 )
 nodes/fragment/6/position = Vector2( 440, 280 )
-nodes/fragment/7/node = SubResource( 38 )
+nodes/fragment/7/node = SubResource( 34 )
 nodes/fragment/7/position = Vector2( 640, 140 )
 nodes/fragment/connections = PoolIntArray( 2, 0, 3, 0, 2, 0, 3, 1, 3, 1, 5, 0, 7, 0, 0, 1, 5, 0, 7, 0, 6, 0, 7, 1 )
 
-[sub_resource type="ShaderMaterial" id=35]
-shader = SubResource( 34 )
+[sub_resource type="ShaderMaterial" id=36]
+shader = SubResource( 35 )
 shader_param/vizualization = 1.0
 
-[sub_resource type="PlaneMesh" id=36]
-material = SubResource( 35 )
+[sub_resource type="PlaneMesh" id=37]
+material = SubResource( 36 )
 size = Vector2( 2.8, 1.8 )
 
 [node name="Boat" type="KinematicBody"]
@@ -715,13 +715,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30898, 1.3659, 0.300463 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Spatial"]
 transform = Transform( -8.62863e-008, 1.34035e-023, -2.424, -3.0439e-015, 1, 2.56417e-022, 1.974, 0, -1.05956e-007, 0.167624, -0.814544, -0.0409862 )
-mesh = SubResource( 36 )
+mesh = SubResource( 37 )
 
 [node name="mouse" parent="Spatial" instance=ExtResource( 5 )]
 
 [node name="Camera Movment" type="Node2D" parent="Spatial"]
 position = Vector2( 512, 300 )
 script = ExtResource( 6 )
+
+[node name="Camera2D" type="Camera2D" parent="Spatial/Camera Movment"]
+current = true
 
 [node name="Mouse Follow" type="Node2D" parent="Spatial"]
 position = Vector2( -2.86389, 1.43196 )
