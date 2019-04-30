@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/Models/Mouse Follow.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Models/Power.gd" type="Script" id=8]
 
-[sub_resource type="BoxShape" id=38]
+[sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1, 1.92066 )
 
 [sub_resource type="Shader" id=2]
@@ -638,7 +638,7 @@ size = Vector2( 2.8, 1.8 )
 transform = Transform( 1, 0, 0, 0, 1, -8.74228e-008, 0, 8.74228e-008, 1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 38 )
+shape = SubResource( 1 )
 
 [node name="camera" type="Spatial" parent="."]
 

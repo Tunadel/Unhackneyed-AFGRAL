@@ -31,3 +31,6 @@ func _process(delta):
 		motion *= desaleration
 		state = 0
 		get_parent().get_parent().translate(Vector3(0,0,-delta * motion))
+		
+	if get_parent().get_parent().get_translation().y > 1 or get_parent().get_parent().get_translation().y < 1:
+		get_parent().get_parent().set_translation(Vector3(get_parent().get_parent().get_translation().x,1,get_parent().get_parent().get_translation().z))
