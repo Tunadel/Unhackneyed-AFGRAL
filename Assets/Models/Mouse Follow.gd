@@ -10,18 +10,24 @@ var vizualization_show = 0.0
 
 func _process(delta):
 	vizualization = vizualization_show
+	
 	vizualization_show = lerp(vizualization_show, state, 0.1)
+	
 	get_parent().get_node("CSGMesh").get_mesh().get_material().set_shader_param("vizualization",vizualization_show)
 	
-	if Input.is_action_pressed("ui_left_mouse"):
-		if motion > -maximun_speed_forward:
-			motion -= speed_forward
+	speed_forward = (get_position().distance_to(get_global_mouse_position())) * 0.1
+	
+	if get_parent().get_parent().move_and_collide(Vector3(0,0,0)):
+		motion = motion * -0.1
+	
+	if Input.is_action_just_pressed("ui_left_mouse"):
+		Input. warp_mouse_position(Vector2(OS.get_window_size().x/2,OS.get_window_size().y/2))
+	
+	if Input.is_action_just_released("ui_left_mouse"):
+		if motion < maximun_speed_forward:
+			motion += speed_forward
 			state = 1
-			get_parent().get_node("Smoke/Particles").emitting = true
 	else:
 		motion *= desaleration
 		state = 0
-		get_parent().get_node("Smoke/Particles").emitting = false
-	get_parent().get_parent().translate(Vector3(0,0,-delta * motion))
-	
-		
+		get_parent().get_parent().translate(Vector3(0,0,-delta * motion))

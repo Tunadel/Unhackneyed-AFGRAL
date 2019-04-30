@@ -1,62 +1,10 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://Assets/Materials/boat_shader.tres" type="Material" id=1]
-[ext_resource path="res://Assets/Materials/sand_shader.tres" type="Material" id=2]
-[ext_resource path="res://Assets/Materials/water_shader.tres" type="Material" id=3]
-
-[sub_resource type="Shader" id=1]
-resource_name = "Shader Nodetree"
-code = "shader_type spatial;
-render_mode blend_mix,depth_draw_always,cull_back,diffuse_burley,specular_schlick_ggx;
-uniform sampler2D uni1_textpng001;
-
-
-void node_tex_image(vec3 co, sampler2D ima, out vec4 color, out float alpha) {
-    color = texture(ima, co.xy);
-    alpha = color.a;
-}
-
-
-void node_bsdf_diffuse(vec4 color, float roughness, out vec3 albedo,
-        out float specular_out, out float roughness_out) {
-    albedo = color.rgb;
-    specular_out = 0.5;
-    roughness_out = 1.0;
-}
-
-
-
-void vertex() {
-	
-}
-
-
-void fragment() {
-	// node: Image Texture
-	// type: ShaderNodeTexImage
-	// texture image from node Image Texture
-	vec4 var1_ImageTexture_Color;
-	float var2_ImageTexture_Alpha;
-	node_tex_image(vec3(0.0, 0.0, 0.0), uni1_textpng001, var1_ImageTexture_Color, var2_ImageTexture_Alpha);
-	
-	// node: Diffuse BSDF
-	// type: ShaderNodeBsdfDiffuse
-	float var3_DiffuseBSDF_Roughness;
-	var3_DiffuseBSDF_Roughness = 0.0;
-	vec3 var4_out_albedo;
-	float var5_out_specular;
-	float var6_out_oren_nayar_roughness;
-	node_bsdf_diffuse(var1_ImageTexture_Color, var3_DiffuseBSDF_Roughness, var4_out_albedo, var5_out_specular, var6_out_oren_nayar_roughness);
-	
-	ALBEDO = var4_out_albedo;
-	SPECULAR = var5_out_specular;
-	// uncomment it only when you set diffuse mode to oren nayar
-	// ROUGHNESS = oren_nayar_rougness
-}
-"
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+[ext_resource path="res://Assets/Materials/ground_shader.tres" type="Material" id=1]
+[ext_resource path="res://Assets/Materials/boat_shader.tres" type="Material" id=2]
+[ext_resource path="res://Assets/Materials/sand_shader.tres" type="Material" id=3]
+[ext_resource path="res://Assets/Materials/rock_shader.tres" type="Material" id=4]
+[ext_resource path="res://Assets/Materials/water_shader.tres" type="Material" id=5]
 
 [sub_resource type="ArrayMesh" id=3]
 resource_name = "Cylinder001"
@@ -67,65 +15,15 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 60,
-"material": SubResource( 2 ),
+"material": ExtResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 50
 }
 
-[sub_resource type="Shader" id=4]
-resource_name = "Shader Nodetree"
-code = "shader_type spatial;
-render_mode blend_mix,depth_draw_always,cull_back,diffuse_burley,specular_schlick_ggx;
-uniform sampler2D uni1_sandpng;
-
-
-void node_tex_image(vec3 co, sampler2D ima, out vec4 color, out float alpha) {
-    color = texture(ima, co.xy);
-    alpha = color.a;
-}
-
-
-void node_bsdf_diffuse(vec4 color, float roughness, out vec3 albedo,
-        out float specular_out, out float roughness_out) {
-    albedo = color.rgb;
-    specular_out = 0.5;
-    roughness_out = 1.0;
-}
-
-
-
-void vertex() {
-	
-}
-
-
-void fragment() {
-	// node: Image Texture
-	// type: ShaderNodeTexImage
-	// texture image from node Image Texture
-	vec4 var1_ImageTexture_Color;
-	float var2_ImageTexture_Alpha;
-	node_tex_image(vec3(0.0, 0.0, 0.0), uni1_sandpng, var1_ImageTexture_Color, var2_ImageTexture_Alpha);
-	
-	// node: Diffuse BSDF
-	// type: ShaderNodeBsdfDiffuse
-	float var3_DiffuseBSDF_Roughness;
-	var3_DiffuseBSDF_Roughness = 0.0;
-	vec3 var4_out_albedo;
-	float var5_out_specular;
-	float var6_out_oren_nayar_roughness;
-	node_bsdf_diffuse(var1_ImageTexture_Color, var3_DiffuseBSDF_Roughness, var4_out_albedo, var5_out_specular, var6_out_oren_nayar_roughness);
-	
-	ALBEDO = var4_out_albedo;
-	SPECULAR = var5_out_specular;
-	// uncomment it only when you set diffuse mode to oren nayar
-	// ROUGHNESS = oren_nayar_rougness
-}
-"
-
-[sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 4 )
+[sub_resource type="CylinderShape" id=22]
+radius = 0.916429
+height = 1.26316
 
 [sub_resource type="ArrayMesh" id=6]
 resource_name = "Cylinder004"
@@ -136,65 +34,11 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 60,
-"material": SubResource( 5 ),
+"material": ExtResource( 3 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 50
 }
-
-[sub_resource type="Shader" id=7]
-resource_name = "Shader Nodetree"
-code = "shader_type spatial;
-render_mode blend_mix,depth_draw_always,cull_back,diffuse_burley,specular_schlick_ggx;
-uniform sampler2D uni1_textpng000;
-
-
-void node_tex_image(vec3 co, sampler2D ima, out vec4 color, out float alpha) {
-    color = texture(ima, co.xy);
-    alpha = color.a;
-}
-
-
-void node_bsdf_diffuse(vec4 color, float roughness, out vec3 albedo,
-        out float specular_out, out float roughness_out) {
-    albedo = color.rgb;
-    specular_out = 0.5;
-    roughness_out = 1.0;
-}
-
-
-
-void vertex() {
-	
-}
-
-
-void fragment() {
-	// node: Image Texture
-	// type: ShaderNodeTexImage
-	// texture image from node Image Texture
-	vec4 var1_ImageTexture_Color;
-	float var2_ImageTexture_Alpha;
-	node_tex_image(vec3(0.0, 0.0, 0.0), uni1_textpng000, var1_ImageTexture_Color, var2_ImageTexture_Alpha);
-	
-	// node: Diffuse BSDF
-	// type: ShaderNodeBsdfDiffuse
-	float var3_DiffuseBSDF_Roughness;
-	var3_DiffuseBSDF_Roughness = 0.0;
-	vec3 var4_out_albedo;
-	float var5_out_specular;
-	float var6_out_oren_nayar_roughness;
-	node_bsdf_diffuse(var1_ImageTexture_Color, var3_DiffuseBSDF_Roughness, var4_out_albedo, var5_out_specular, var6_out_oren_nayar_roughness);
-	
-	ALBEDO = var4_out_albedo;
-	SPECULAR = var5_out_specular;
-	// uncomment it only when you set diffuse mode to oren nayar
-	// ROUGHNESS = oren_nayar_rougness
-}
-"
-
-[sub_resource type="ShaderMaterial" id=8]
-shader = SubResource( 7 )
 
 [sub_resource type="ArrayMesh" id=9]
 resource_name = "Cylinder003"
@@ -205,7 +49,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 60,
-"material": SubResource( 8 ),
+"material": ExtResource( 4 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 50
@@ -280,60 +124,6 @@ surfaces/0 = {
 "vertex_count": 50
 }
 
-[sub_resource type="Shader" id=13]
-resource_name = "Shader Nodetree"
-code = "shader_type spatial;
-render_mode blend_mix,depth_draw_always,cull_back,diffuse_burley,specular_schlick_ggx;
-uniform sampler2D uni1_abfa1b5c7f84433dae415eb3ea2a71f3_scaledjpg005;
-
-
-void node_tex_image(vec3 co, sampler2D ima, out vec4 color, out float alpha) {
-    color = texture(ima, co.xy);
-    alpha = color.a;
-}
-
-
-void node_bsdf_diffuse(vec4 color, float roughness, out vec3 albedo,
-        out float specular_out, out float roughness_out) {
-    albedo = color.rgb;
-    specular_out = 0.5;
-    roughness_out = 1.0;
-}
-
-
-
-void vertex() {
-	
-}
-
-
-void fragment() {
-	// node: Image Texture
-	// type: ShaderNodeTexImage
-	// texture image from node Image Texture
-	vec4 var1_ImageTexture_Color;
-	float var2_ImageTexture_Alpha;
-	node_tex_image(vec3(0.0, 0.0, 0.0), uni1_abfa1b5c7f84433dae415eb3ea2a71f3_scaledjpg005, var1_ImageTexture_Color, var2_ImageTexture_Alpha);
-	
-	// node: Diffuse BSDF
-	// type: ShaderNodeBsdfDiffuse
-	float var3_DiffuseBSDF_Roughness;
-	var3_DiffuseBSDF_Roughness = 0.0;
-	vec3 var4_out_albedo;
-	float var5_out_specular;
-	float var6_out_oren_nayar_roughness;
-	node_bsdf_diffuse(var1_ImageTexture_Color, var3_DiffuseBSDF_Roughness, var4_out_albedo, var5_out_specular, var6_out_oren_nayar_roughness);
-	
-	ALBEDO = var4_out_albedo;
-	SPECULAR = var5_out_specular;
-	// uncomment it only when you set diffuse mode to oren nayar
-	// ROUGHNESS = oren_nayar_rougness
-}
-"
-
-[sub_resource type="ShaderMaterial" id=14]
-shader = SubResource( 13 )
-
 [sub_resource type="ArrayMesh" id=15]
 resource_name = "Cylinder006"
 surfaces/0 = {
@@ -343,7 +133,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 60,
-"material": SubResource( 14 ),
+"material": ExtResource( 5 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 50
@@ -492,34 +282,67 @@ surfaces/0 = {
 [node name="Earth" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
 mesh = SubResource( 3 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="StaticBody3" type="StaticBody" parent="Earth"]
+editor/display_folded = true
+
+[node name="CollisionShape" type="CollisionShape" parent="Earth/StaticBody3"]
+shape = SubResource( 22 )
 
 [node name="Sand" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2.02337 )
 mesh = SubResource( 6 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody4" type="StaticBody" parent="Sand"]
+editor/display_folded = true
+
+[node name="CollisionShape" type="CollisionShape" parent="Sand/StaticBody4"]
+shape = SubResource( 22 )
 
 [node name="Rock" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
 mesh = SubResource( 9 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="StaticBody4" type="StaticBody" parent="Rock"]
+editor/display_folded = true
+
+[node name="CollisionShape" type="CollisionShape" parent="Rock/StaticBody4"]
+shape = SubResource( 22 )
 
 [node name="Snow" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2.04161 )
 mesh = SubResource( 12 )
-material/0 = ExtResource( 1 )
+material/0 = null
+
+[node name="StaticBody4" type="StaticBody" parent="Snow"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Snow/StaticBody4"]
+shape = SubResource( 22 )
 
 [node name="Water" type="MeshInstance" parent="."]
 mesh = SubResource( 15 )
-material/0 = ExtResource( 3 )
+material/0 = ExtResource( 5 )
 
 [node name="Earth-snow" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.06929 )
 mesh = SubResource( 18 )
-material/0 = ExtResource( 1 )
+material/0 = null
+
+[node name="StaticBody2" type="StaticBody" parent="Earth-snow"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Earth-snow/StaticBody2"]
+shape = SubResource( 22 )
 
 [node name="Rock-snow" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4.08455 )
 mesh = SubResource( 21 )
-material/0 = ExtResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Rock-snow"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Rock-snow/StaticBody"]
+shape = SubResource( 22 )
 

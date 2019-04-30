@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Assets/Materials/boat_shader.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Materials/blue_shader.tres" type="Material" id=2]
@@ -7,9 +7,10 @@
 [ext_resource path="res://Ui/mouse/mouse.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Models/Camera Movment.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Models/Mouse Follow.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Models/Power.gd" type="Script" id=8]
 
-[sub_resource type="BoxShape" id=1]
-extents = Vector3( 1, 1, 1.70528 )
+[sub_resource type="BoxShape" id=38]
+extents = Vector3( 1, 1, 1.92066 )
 
 [sub_resource type="Shader" id=2]
 code = "shader_type spatial;
@@ -637,7 +638,7 @@ size = Vector2( 2.8, 1.8 )
 transform = Transform( 1, 0, 0, 0, 1, -8.74228e-008, 0, 8.74228e-008, 1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 38 )
 
 [node name="camera" type="Spatial" parent="."]
 
@@ -648,7 +649,7 @@ current = true
 size = 10.1795
 
 [node name="Spatial" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0 )
+transform = Transform( 1, 8.74228e-008, 0, -8.74228e-008, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Cube" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1.10975, 0, 0, 0, 1.23436, 0, 0, 0, 1.23436, 0, 0, 0 )
@@ -720,6 +721,7 @@ mesh = SubResource( 37 )
 [node name="mouse" parent="Spatial" instance=ExtResource( 5 )]
 
 [node name="Camera Movment" type="Node2D" parent="Spatial"]
+editor/display_folded = true
 position = Vector2( 512, 300 )
 script = ExtResource( 6 )
 
@@ -727,9 +729,15 @@ script = ExtResource( 6 )
 current = true
 
 [node name="Mouse Follow" type="Node2D" parent="Spatial"]
-position = Vector2( -2.86389, 1.43196 )
+position = Vector2( 512, 300 )
 script = ExtResource( 7 )
 speed_forward = 0.6
 maximun_speed_forward = 6.0
-desaleration = 0.95
+desaleration = 0.975
+
+[node name="Power" type="Polygon2D" parent="Spatial"]
+position = Vector2( 978.727, 552.83 )
+color = Color( 0, 1, 0.0392157, 1 )
+polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+script = ExtResource( 8 )
 
