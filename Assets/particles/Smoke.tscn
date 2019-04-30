@@ -28,7 +28,7 @@ rings = 6
 [node name="Smoke" type="Spatial"]
 
 [node name="Particles" type="Particles" parent="."]
-amount = 20
+emitting = false
 lifetime = 2.0
 visibility_aabb = AABB( -1.33166, -1.19099, -1.1793, 2.66332, 2.38198, 2.35859 )
 local_coords = false
