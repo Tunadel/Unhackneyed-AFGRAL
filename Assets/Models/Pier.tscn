@@ -1,8 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Materials/wood.tres" type="Material" id=1]
 
-[sub_resource type="ArrayMesh" id=3]
+[sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube010"
 surfaces/0 = {
 "aabb": AABB( -0.779372, -1.17017, -1.95757, 1.55874, 1.23523, 5.40563 ),
@@ -17,8 +17,17 @@ surfaces/0 = {
 "vertex_count": 620
 }
 
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1, 0.687398, 2.75988 )
+
 [node name="Cube004" type="MeshInstance"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28356, 1.36466, 2.2346 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.508047, 0.72513 )
+shape = SubResource( 2 )
 
