@@ -25,7 +25,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28356, 1.36466, 2.2346 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="."]
+[node name="StaticBody" type="StaticBody" parent="." groups=[
+"bridge",
+]]
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.508047, 0.72513 )

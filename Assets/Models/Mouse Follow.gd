@@ -7,11 +7,13 @@ export var desaleration = 0.0
 var vizualization = 0.0
 var state = 0.0
 var vizualization_show = 0.0
+var water_level = 1.05
 
 func _process(delta):
-	vizualization = vizualization_show
-	
-	vizualization_show = lerp(vizualization_show, state, 0.1)
+	if motion > 0:
+		vizualization_show = motion * 0.5
+	else:
+		vizualization_show = motion * -0.5
 	
 	get_parent().get_node("CSGMesh").get_mesh().get_material().set_shader_param("vizualization",vizualization_show)
 	
@@ -32,5 +34,5 @@ func _process(delta):
 		state = 0
 		get_parent().get_parent().translate(Vector3(0,0,-delta * motion))
 		
-	if get_parent().get_parent().get_translation().y > 1 or get_parent().get_parent().get_translation().y < 1:
-		get_parent().get_parent().set_translation(Vector3(get_parent().get_parent().get_translation().x,1,get_parent().get_parent().get_translation().z))
+	if get_parent().get_parent().get_translation().y > water_level or get_parent().get_parent().get_translation().y < water_level:
+		get_parent().get_parent().set_translation(Vector3(get_parent().get_parent().get_translation().x,water_level,get_parent().get_parent().get_translation().z))

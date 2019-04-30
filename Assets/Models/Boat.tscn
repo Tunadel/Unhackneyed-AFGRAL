@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Assets/Materials/boat_shader.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Materials/blue_shader.tres" type="Material" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Models/Camera Movment.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Models/Mouse Follow.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Models/Power.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Models/colision_detection.gd" type="Script" id=9]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1, 1.92066 )
@@ -715,7 +716,7 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30898, 1.3659, 0.300463 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Spatial"]
-transform = Transform( -8.62863e-008, 1.34035e-023, -2.424, -3.0439e-015, 1, 2.56417e-022, 1.974, 0, -1.05956e-007, 0.167624, -0.814544, -0.0409862 )
+transform = Transform( -8.62863e-008, 1.34035e-023, -2.424, -3.0439e-015, 1, 2.56417e-022, 1.974, 0, -1.05956e-007, 0.168, -0.765, -0.041 )
 mesh = SubResource( 37 )
 
 [node name="mouse" parent="Spatial" instance=ExtResource( 5 )]
@@ -740,4 +741,16 @@ position = Vector2( 978.727, 552.83 )
 color = Color( 0, 1, 0.0392157, 1 )
 polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 script = ExtResource( 8 )
+
+[node name="colision_detection" type="RayCast" parent="Spatial"]
+transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, 1, -0.7, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -4 )
+script = ExtResource( 9 )
+
+[node name="colision_detection2" type="RayCast" parent="Spatial"]
+transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, -1, -0.7, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -4 )
+script = ExtResource( 9 )
 

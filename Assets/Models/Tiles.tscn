@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/Materials/rock_shader.tres" type="Material" id=4]
 [ext_resource path="res://Assets/Materials/water_shader.tres" type="Material" id=5]
 
-[sub_resource type="ArrayMesh" id=3]
+[sub_resource type="ArrayMesh" id=1]
 resource_name = "Cylinder001"
 surfaces/0 = {
 "aabb": AABB( -0.866025, -0.2, -1, 1.73205, 0.40001, 2 ),
@@ -21,11 +21,11 @@ surfaces/0 = {
 "vertex_count": 50
 }
 
-[sub_resource type="CylinderShape" id=22]
+[sub_resource type="CylinderShape" id=2]
 radius = 0.916429
 height = 1.26316
 
-[sub_resource type="ArrayMesh" id=6]
+[sub_resource type="ArrayMesh" id=3]
 resource_name = "Cylinder004"
 surfaces/0 = {
 "aabb": AABB( -0.866025, -0.2, -1, 1.73205, 0.40001, 2 ),
@@ -40,7 +40,7 @@ surfaces/0 = {
 "vertex_count": 50
 }
 
-[sub_resource type="ArrayMesh" id=9]
+[sub_resource type="ArrayMesh" id=4]
 resource_name = "Cylinder003"
 surfaces/0 = {
 "aabb": AABB( -0.866025, -0.2, -1, 1.73205, 0.40001, 2 ),
@@ -55,7 +55,7 @@ surfaces/0 = {
 "vertex_count": 50
 }
 
-[sub_resource type="Shader" id=10]
+[sub_resource type="Shader" id=5]
 resource_name = "Shader Nodetree"
 code = "shader_type spatial;
 render_mode blend_mix,depth_draw_always,cull_back,diffuse_burley,specular_schlick_ggx;
@@ -106,10 +106,10 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=11]
-shader = SubResource( 10 )
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
 
-[sub_resource type="ArrayMesh" id=12]
+[sub_resource type="ArrayMesh" id=7]
 resource_name = "Cylinder000"
 surfaces/0 = {
 "aabb": AABB( -0.866025, -0.2, -1, 1.73205, 0.40001, 2 ),
@@ -118,13 +118,13 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 60,
-"material": SubResource( 11 ),
+"material": SubResource( 6 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 50
 }
 
-[sub_resource type="ArrayMesh" id=15]
+[sub_resource type="ArrayMesh" id=8]
 resource_name = "Cylinder006"
 surfaces/0 = {
 "aabb": AABB( -0.866025, -0.2, -1, 1.73205, 0.40001, 2 ),
@@ -139,7 +139,7 @@ surfaces/0 = {
 "vertex_count": 50
 }
 
-[sub_resource type="Shader" id=16]
+[sub_resource type="Shader" id=9]
 resource_name = "Shader Nodetree"
 code = "shader_type spatial;
 render_mode blend_mix,depth_draw_always,cull_back,diffuse_burley,specular_schlick_ggx;
@@ -190,10 +190,10 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=17]
-shader = SubResource( 16 )
+[sub_resource type="ShaderMaterial" id=10]
+shader = SubResource( 9 )
 
-[sub_resource type="ArrayMesh" id=18]
+[sub_resource type="ArrayMesh" id=11]
 resource_name = "Cylinder008"
 surfaces/0 = {
 "aabb": AABB( -0.866025, -0.2, -1, 1.73205, 0.40001, 2 ),
@@ -202,13 +202,13 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 60,
-"material": SubResource( 17 ),
+"material": SubResource( 10 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 50
 }
 
-[sub_resource type="Shader" id=19]
+[sub_resource type="Shader" id=12]
 resource_name = "Shader Nodetree"
 code = "shader_type spatial;
 render_mode blend_mix,depth_draw_always,cull_back,diffuse_burley,specular_schlick_ggx;
@@ -259,10 +259,10 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=20]
-shader = SubResource( 19 )
+[sub_resource type="ShaderMaterial" id=13]
+shader = SubResource( 12 )
 
-[sub_resource type="ArrayMesh" id=21]
+[sub_resource type="ArrayMesh" id=14]
 resource_name = "Cylinder009"
 surfaces/0 = {
 "aabb": AABB( -0.866025, -0.2, -1, 1.73205, 0.40001, 2 ),
@@ -271,7 +271,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 60,
-"material": SubResource( 20 ),
+"material": SubResource( 13 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 50
@@ -279,70 +279,103 @@ surfaces/0 = {
 
 [node name="Tiles" type="Spatial"]
 
-[node name="Earth" type="MeshInstance" parent="."]
+[node name="Earth" type="MeshInstance" parent="." groups=[
+"earth",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
-mesh = SubResource( 3 )
+mesh = SubResource( 1 )
 material/0 = ExtResource( 2 )
 
-[node name="StaticBody3" type="StaticBody" parent="Earth"]
-editor/display_folded = true
+[node name="StaticBody3" type="StaticBody" parent="Earth" groups=[
+"earth",
+]]
 
-[node name="CollisionShape" type="CollisionShape" parent="Earth/StaticBody3"]
-shape = SubResource( 22 )
+[node name="CollisionShape" type="CollisionShape" parent="Earth/StaticBody3" groups=[
+"earth",
+]]
+shape = SubResource( 2 )
 
-[node name="Sand" type="MeshInstance" parent="."]
+[node name="Sand" type="MeshInstance" parent="." groups=[
+"sand",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2.02337 )
-mesh = SubResource( 6 )
+mesh = SubResource( 3 )
 material/0 = ExtResource( 3 )
 
-[node name="StaticBody4" type="StaticBody" parent="Sand"]
-editor/display_folded = true
+[node name="StaticBody4" type="StaticBody" parent="Sand" groups=[
+"sand",
+]]
 
-[node name="CollisionShape" type="CollisionShape" parent="Sand/StaticBody4"]
-shape = SubResource( 22 )
+[node name="CollisionShape" type="CollisionShape" parent="Sand/StaticBody4" groups=[
+"sand",
+]]
+shape = SubResource( 2 )
 
-[node name="Rock" type="MeshInstance" parent="."]
+[node name="Rock" type="MeshInstance" parent="." groups=[
+"rock",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
-mesh = SubResource( 9 )
+mesh = SubResource( 4 )
 material/0 = ExtResource( 2 )
 
-[node name="StaticBody4" type="StaticBody" parent="Rock"]
-editor/display_folded = true
+[node name="StaticBody4" type="StaticBody" parent="Rock" groups=[
+"rock",
+]]
 
-[node name="CollisionShape" type="CollisionShape" parent="Rock/StaticBody4"]
-shape = SubResource( 22 )
+[node name="CollisionShape" type="CollisionShape" parent="Rock/StaticBody4" groups=[
+"rock",
+]]
+shape = SubResource( 2 )
 
-[node name="Snow" type="MeshInstance" parent="."]
+[node name="Snow" type="MeshInstance" parent="." groups=[
+"snow",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2.04161 )
-mesh = SubResource( 12 )
+mesh = SubResource( 7 )
 material/0 = null
 
-[node name="StaticBody4" type="StaticBody" parent="Snow"]
+[node name="StaticBody4" type="StaticBody" parent="Snow" groups=[
+"snow",
+]]
 
-[node name="CollisionShape" type="CollisionShape" parent="Snow/StaticBody4"]
-shape = SubResource( 22 )
+[node name="CollisionShape" type="CollisionShape" parent="Snow/StaticBody4" groups=[
+"snow",
+]]
+shape = SubResource( 2 )
 
 [node name="Water" type="MeshInstance" parent="."]
-mesh = SubResource( 15 )
+mesh = SubResource( 8 )
 material/0 = ExtResource( 5 )
 
-[node name="Earth-snow" type="MeshInstance" parent="."]
+[node name="Earth-snow" type="MeshInstance" parent="." groups=[
+"snow",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.06929 )
-mesh = SubResource( 18 )
+mesh = SubResource( 11 )
 material/0 = null
 
-[node name="StaticBody2" type="StaticBody" parent="Earth-snow"]
+[node name="StaticBody2" type="StaticBody" parent="Earth-snow" groups=[
+"snow",
+]]
 
-[node name="CollisionShape" type="CollisionShape" parent="Earth-snow/StaticBody2"]
-shape = SubResource( 22 )
+[node name="CollisionShape" type="CollisionShape" parent="Earth-snow/StaticBody2" groups=[
+"snow",
+]]
+shape = SubResource( 2 )
 
-[node name="Rock-snow" type="MeshInstance" parent="."]
+[node name="Rock-snow" type="MeshInstance" parent="." groups=[
+"snow",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4.08455 )
-mesh = SubResource( 21 )
+mesh = SubResource( 14 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="Rock-snow"]
+[node name="StaticBody" type="StaticBody" parent="Rock-snow" groups=[
+"snow",
+]]
 
-[node name="CollisionShape" type="CollisionShape" parent="Rock-snow/StaticBody"]
-shape = SubResource( 22 )
+[node name="CollisionShape" type="CollisionShape" parent="Rock-snow/StaticBody" groups=[
+"snow",
+]]
+shape = SubResource( 2 )
 
