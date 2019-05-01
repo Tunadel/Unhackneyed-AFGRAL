@@ -1,6 +1,6 @@
 extends Node2D
 
-var dict = "res://save.json"
+var dict = "res://language.json"
 var file = File.new()
 var current_level
 var coins = 0

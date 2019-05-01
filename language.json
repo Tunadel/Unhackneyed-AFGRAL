@@ -2,8 +2,8 @@
 "all":
 [
 ["Dodge the Iceberg","Stop abruptly","Keep Going","It’s difficulty to see the ocean in their front. Fog has taken over the horizon. When they finally notice the big ice block in front of the boat, it’s just a few meters away. If the Titanic has been taken down by an iceberg, could the refugees survive it?"],
-["11Dodge the Iceberg","Stop abruptly","Keep Going","123"],
-["qwe","die","Keep Going","123"]
 ["card1","card2","card3","texto"],
+["card1","card2","card3","texto"],
+["card1","card2","card3","texto"]
 ]
 }
