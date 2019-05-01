@@ -15,10 +15,10 @@ func _input(event):
 				var x = get_node("HSlider").get_value()
 				self.set_value(x-10)
 
-func _on_HSlider_value_changed( value ):
+func _on_Volume_value_changed(value):
 	if volume_mute == false:
 		volume = self.get_value()
 		volume -= volume_reduct
 		volume = volume * volume_divider
 		AudioServer.set_bus_volume_db(0 , volume)
-	pass # replace with function body
+	pass # Replace with function body.

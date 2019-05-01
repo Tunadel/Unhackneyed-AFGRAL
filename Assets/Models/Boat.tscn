@@ -736,7 +736,6 @@ current = true
 position = Vector2( 512, 300 )
 script = ExtResource( 7 )
 speed_forward = 0.6
-maximun_speed_forward = 6.0
 desaleration = 0.975
 
 [node name="Power" type="Polygon2D" parent="Spatial"]

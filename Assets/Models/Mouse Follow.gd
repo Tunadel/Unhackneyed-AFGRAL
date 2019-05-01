@@ -2,7 +2,7 @@ extends Node2D
 
 export var motion = 0.0
 export var speed_forward = 0.0
-export var maximun_speed_forward = 0.0
+export var maximun_speed_forward = 70
 export var desaleration = 0.0
 var vizualization = 0.0
 var state = 0.0
@@ -17,7 +17,10 @@ func _process(delta):
 	
 	get_parent().get_node("CSGMesh").get_mesh().get_material().set_shader_param("vizualization",vizualization_show)
 	
-	speed_forward = (get_position().distance_to(get_global_mouse_position())) * 0.1
+	speed_forward = (get_position().distance_to(get_global_mouse_position())) * 0.25
+	
+	if speed_forward > maximun_speed_forward:
+		speed_forward = maximun_speed_forward
 	
 	if get_parent().get_parent().move_and_collide(Vector3(0,0,0)):
 		motion = motion * -0.1

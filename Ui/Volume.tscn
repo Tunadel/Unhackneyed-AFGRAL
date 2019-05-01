@@ -3,6 +3,7 @@
 [ext_resource path="res://Ui/Volume.gd" type="Script" id=1]
 
 [node name="Volume" type="HSlider"]
+pause_mode = 2
 margin_left = 389.0
 margin_top = 307.0
 margin_right = 603.0
@@ -19,3 +20,4 @@ margin_bottom = 16.4575
 text = "Volume:
 "
 
+[connection signal="value_changed" from="." to="." method="_on_Volume_value_changed"]
