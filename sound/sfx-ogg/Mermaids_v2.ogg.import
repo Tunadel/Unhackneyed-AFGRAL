@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Mermaids_v2.ogg-3f4aa57c80e38701cc36f47f74cf2c19.oggstr"
+
+[deps]
+
+source_file="res://sound/sfx-ogg/Mermaids_v2.ogg"
+dest_files=[ "res://.import/Mermaids_v2.ogg-3f4aa57c80e38701cc36f47f74cf2c19.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

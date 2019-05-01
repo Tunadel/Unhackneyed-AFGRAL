@@ -1,22 +1,30 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Ui/mouse/mouse.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Ui/Button.gd" type="Script" id=2]
+[ext_resource path="res://Ui/Play.gd" type="Script" id=2]
+[ext_resource path="res://Ui/Volume.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Ui/Quit Game.tscn" type="PackedScene" id=4]
 
 [node name="Control" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="mouse" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 0 )
 
-[node name="Button" type="Button" parent="."]
+[node name="Play" type="Button" parent="."]
 margin_left = 430.0
-margin_top = 131.0
+margin_top = 240.474
 margin_right = 556.0
-margin_bottom = 168.0
-text = "jogar"
+margin_bottom = 277.474
+text = "Play"
 script = ExtResource( 2 )
 level = "res://Lvls/Test-Lvl.tscn"
 
-[connection signal="button_down" from="Button" to="Button" method="_on_Button_button_down"]
+[node name="Volume" parent="." instance=ExtResource( 3 )]
+ticks_on_borders = true
+
+[node name="Quit Game" parent="." instance=ExtResource( 4 )]
+
+[connection signal="button_down" from="Play" to="Play" method="_on_Button_button_down"]

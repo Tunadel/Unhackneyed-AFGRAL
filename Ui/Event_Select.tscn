@@ -55,6 +55,11 @@ custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 
+[node name="Button" type="Button" parent="Control/Card"]
+margin_right = 199.0
+margin_bottom = 320.0
+flat = true
+
 [node name="Card2" type="TextureRect" parent="Control"]
 anchor_left = 0.5
 anchor_top = 1.0
@@ -89,6 +94,12 @@ custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 
+[node name="Button2" type="Button" parent="Control/Card2"]
+margin_left = 1.6842
+margin_right = 200.684
+margin_bottom = 320.0
+flat = true
+
 [node name="Card3" type="TextureRect" parent="Control"]
 anchor_left = 1.0
 anchor_top = 1.0
@@ -122,6 +133,12 @@ custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 
+[node name="Button3" type="Button" parent="Control/Card3"]
+margin_left = 1.26318
+margin_right = 200.263
+margin_bottom = 320.0
+flat = true
+
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -132,3 +149,6 @@ margin_bottom = -200.0
 custom_fonts/font = ExtResource( 3 )
 autowrap = true
 
+[connection signal="button_down" from="Control/Card/Button" to="." method="_on_Button_button_down"]
+[connection signal="button_down" from="Control/Card2/Button2" to="." method="_on_Button2_button_down"]
+[connection signal="button_down" from="Control/Card3/Button3" to="." method="_on_Button3_button_down"]

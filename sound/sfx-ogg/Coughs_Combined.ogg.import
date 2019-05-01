@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Coughs_Combined.ogg-8f87eb16e15be5af038fc9573ac238ab.oggstr"
+
+[deps]
+
+source_file="res://sound/sfx-ogg/Coughs_Combined.ogg"
+dest_files=[ "res://.import/Coughs_Combined.ogg-8f87eb16e15be5af038fc9573ac238ab.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

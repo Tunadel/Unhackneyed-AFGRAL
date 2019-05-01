@@ -4,6 +4,7 @@
 [ext_resource path="res://Ui/mouse/mouse.gd" type="Script" id=2]
 
 [node name="mouse" type="Sprite"]
+pause_mode = 2
 position = Vector2( -2.86389, 3.60095 )
 scale = Vector2( 0.5, 0.5 )
 z_index = 100

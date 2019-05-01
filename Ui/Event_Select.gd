@@ -36,3 +36,12 @@ func get_Stats():
 	Card3,
 	Title
 	]
+
+func _on_Button_button_down():
+	pass # Replace with function body.
+
+func _on_Button2_button_down():
+	pass # Replace with function body.
+
+func _on_Button3_button_down():
+	pass # Replace with function body.
