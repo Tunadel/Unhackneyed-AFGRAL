@@ -1,22 +1,15 @@
 extends RayCast
 
-var group = ""
+export var group = []
+var i = 0
 
 func _process(delta):
 	if is_colliding():
-		group = get_collider().get_groups()
-		print(group)
-		match group:
-			"ice":
-				print("ice")
-			"earth":
-				print("earth")
-			"rock":
-				print("rock")
-			"sand":
-				print("sand")
-			"iceberg":
-				print("iceberg")
-			"tiles":
-				print("tiles")
-			
+		for i in group.size()-1:
+			if get_collider().is_in_group(group[i]):
+				play_event(i)
+	
+func play_event(event):
+	match event:
+		0:
+			print("bridge")

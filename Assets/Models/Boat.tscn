@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Models/Camera Movment.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Models/Mouse Follow.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Models/Power.gd" type="Script" id=8]
-[ext_resource path="res://Assets/Models/colision_detection.gd" type="Script" id=9]
+[ext_resource path="res://systems/colision_detection3.tscn" type="PackedScene" id=9]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1, 1.92066 )
@@ -742,15 +742,14 @@ color = Color( 0, 1, 0.0392157, 1 )
 polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 script = ExtResource( 8 )
 
-[node name="colision_detection" type="RayCast" parent="Spatial"]
-transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, 1, -0.7, 0 )
-enabled = true
-cast_to = Vector3( 0, 0, -4 )
-script = ExtResource( 9 )
+[node name="colision_detection3" parent="Spatial" instance=ExtResource( 9 )]
+cast_to = Vector3( 0, -3, 0 )
 
-[node name="colision_detection2" type="RayCast" parent="Spatial"]
+[node name="colision_detection4" parent="Spatial" instance=ExtResource( 9 )]
+transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, 1, -0.7, 0 )
+cast_to = Vector3( 0, 0, -3 )
+
+[node name="colision_detection5" parent="Spatial" instance=ExtResource( 9 )]
 transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, -1, -0.7, 0 )
-enabled = true
-cast_to = Vector3( 0, 0, -4 )
-script = ExtResource( 9 )
+cast_to = Vector3( 0, 0, -3 )
 

@@ -8,6 +8,10 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+Card1 = "Dodge the Iceberg"
+Card2 = "Stop abruptly"
+Card3 = "Keep Going"
+Title = "It’s difficulty to see the ocean in their front. Fog has taken over the horizon. When they finally notice the big ice block in front of the boat, it’s just a few meters away. If the Titanic has been taken down by an iceberg, could the refugees survive it?"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -53,6 +57,7 @@ margin_top = -43.0
 margin_right = 82.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Dodge the Iceberg"
 align = 1
 
 [node name="Card2" type="TextureRect" parent="Control"]
@@ -87,6 +92,7 @@ margin_top = -43.0
 margin_right = 82.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Stop abruptly"
 align = 1
 
 [node name="Card3" type="TextureRect" parent="Control"]
@@ -120,6 +126,7 @@ margin_top = -43.0
 margin_right = 82.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Keep Going"
 align = 1
 
 [node name="Label" type="Label" parent="."]
@@ -130,5 +137,6 @@ margin_top = 80.0
 margin_right = -100.0
 margin_bottom = -200.0
 custom_fonts/font = ExtResource( 3 )
+text = "It’s difficulty to see the ocean in their front. Fog has taken over the horizon. When they finally notice the big ice block in front of the boat, it’s just a few meters away. If the Titanic has been taken down by an iceberg, could the refugees survive it?"
 autowrap = true
 

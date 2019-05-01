@@ -20,7 +20,9 @@ surfaces/0 = {
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 1, 0.687398, 2.75988 )
 
-[node name="Cube004" type="MeshInstance"]
+[node name="Cube004" type="MeshInstance" groups=[
+"bridge",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28356, 1.36466, 2.2346 )
 mesh = SubResource( 1 )
 material/0 = null
@@ -28,8 +30,12 @@ material/0 = null
 [node name="StaticBody" type="StaticBody" parent="." groups=[
 "bridge",
 ]]
+collision_layer = 3
+collision_mask = 3
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody" groups=[
+"bridge",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.508047, 0.72513 )
 shape = SubResource( 2 )
 
