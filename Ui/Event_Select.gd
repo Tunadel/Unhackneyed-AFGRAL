@@ -29,7 +29,7 @@ func save_Stats():
 
 func load_Stats():
 	load_saver.loader()
-	text = load_saver.data_load
+	text = get_node("Languages").english
 
 func get_Stats():
 	text = [
