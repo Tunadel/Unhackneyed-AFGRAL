@@ -3,10 +3,11 @@
 [ext_resource path="res://Assets/Models/colision_detection.gd" type="Script" id=1]
 
 [node name="colision_detection" type="RayCast"]
+pause_mode = 2
 transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, 4.67705e-022, -0.7, 0 )
 enabled = true
 cast_to = Vector3( 0, -5, 0 )
 collision_mask = 2
 script = ExtResource( 1 )
-group = [ "bridge", "tiles", "tiles", "tiles", "tiles", "tiles", "tiles", "tiles", "tiles", "tiles", "tiles", "tiles", "tiles", "tiles" ]
+group = [ "bridge", "iceberg", "tiles", "tiles", "tiles", "tiles", "tiles", "tiles", "tiles", "tiles", "tiles", "tiles", "tiles", "tiles" ]
 

@@ -6,11 +6,14 @@ export var Card1 = ""
 export var Card2 = ""
 export var Card3 = ""
 export var Title = ""
-var event
+var event 
 
 func _ready():
-	event_selector(0)
+	self.hide()
 
+func event(var i):
+	self.show()
+	event_selector(i)
 
 func event_selector(var i):
 	load_Stats()
@@ -27,7 +30,6 @@ func save_Stats():
 func load_Stats():
 	load_saver.loader()
 	text = load_saver.data_load
-	print(text)
 
 func get_Stats():
 	text = [
@@ -38,10 +40,17 @@ func get_Stats():
 	]
 
 func _on_Button_button_down():
+	action()
 	pass # Replace with function body.
 
 func _on_Button2_button_down():
+	action()
 	pass # Replace with function body.
 
 func _on_Button3_button_down():
+	action()
 	pass # Replace with function body.
+
+func action():
+	self.hide()
+	get_tree().set_pause(false)

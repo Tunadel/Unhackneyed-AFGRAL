@@ -49,13 +49,20 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -82.0
-margin_top = -43.0
+margin_top = -48.9473
 margin_right = 82.0
+margin_bottom = -5.94733
+grow_horizontal = 0
+grow_vertical = 0
+rect_pivot_offset = Vector2( -0.84198, 87.3684 )
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
+valign = 2
+autowrap = true
 
 [node name="Button" type="Button" parent="Control/Card"]
+pause_mode = 2
 margin_right = 199.0
 margin_bottom = 320.0
 flat = true
@@ -88,13 +95,20 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -82.0
-margin_top = -43.0
+margin_top = -48.9473
 margin_right = 82.0
+margin_bottom = -5.94733
+grow_horizontal = 0
+grow_vertical = 0
+rect_pivot_offset = Vector2( -0.210358, 84.2105 )
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
+valign = 2
+autowrap = true
 
 [node name="Button2" type="Button" parent="Control/Card2"]
+pause_mode = 2
 margin_left = 1.6842
 margin_right = 200.684
 margin_bottom = 320.0
@@ -123,17 +137,23 @@ texture = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="Control/Card3"]
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -82.0
-margin_top = -43.0
+margin_top = 271.053
 margin_right = 82.0
+margin_bottom = -5.94733
+grow_horizontal = 0
+grow_vertical = 0
+rect_pivot_offset = Vector2( 1.47388, 84.2105 )
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
+valign = 2
+autowrap = true
 
 [node name="Button3" type="Button" parent="Control/Card3"]
+pause_mode = 2
 margin_left = 1.26318
 margin_right = 200.263
 margin_bottom = 320.0
