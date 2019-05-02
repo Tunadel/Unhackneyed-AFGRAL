@@ -772,7 +772,6 @@ pause_mode = 2
 
 [node name="pause" type="Control" parent="Spatial"]
 pause_mode = 2
-editor/display_folded = true
 script = ExtResource( 11 )
 
 [node name="dark" type="Polygon2D" parent="Spatial/pause"]
@@ -816,12 +815,11 @@ align = 1
 valign = 1
 
 [node name="Number" type="Label" parent="CanvasLayer/Passagenrs"]
-margin_left = 11.2781
-margin_top = 15.2587
-margin_right = 64.2781
-margin_bottom = 46.2587
-text = "200/200
-"
+margin_left = 11.0
+margin_top = 19.8768
+margin_right = 64.0
+margin_bottom = 50.8768
+text = "150"
 align = 1
 valign = 1
 

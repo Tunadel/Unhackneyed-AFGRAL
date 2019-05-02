@@ -32,4 +32,13 @@ pause_mode = 2
 stream = ExtResource( 5 )
 autoplay = true
 
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Code: Galo
+Desing: Caroldot
+Art:Tunadel
+Music:Scowsh
+Translation: Igor Carnaúba"
+
 [connection signal="button_down" from="Play" to="Play" method="_on_Button_button_down"]
