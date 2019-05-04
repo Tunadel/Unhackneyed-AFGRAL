@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Ui/Event_Select.gd" type="Script" id=1]
 [ext_resource path="res://Ui/Languages.gd" type="Script" id=2]
-[ext_resource path="res://Ui/fonts/card.png" type="Texture" id=3]
-[ext_resource path="res://Ui/fonts/Text_Font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://exports card/ui-01.png" type="Texture" id=3]
+[ext_resource path="res://Ui/fonts/card.png" type="Texture" id=4]
+[ext_resource path="res://Ui/fonts/Text_Font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://exports card/ui-02.png" type="Texture" id=6]
+[ext_resource path="res://exports card/ui-06.png" type="Texture" id=7]
+[ext_resource path="res://exports card/ui-05.png" type="Texture" id=8]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -33,8 +37,10 @@ margin_bottom = -50.0
 [node name="Card" type="TextureRect" parent="Control"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -320.0
-margin_right = 200.0
+margin_left = -31.9212
+margin_top = -332.277
+margin_right = 215.079
+margin_bottom = 54.7226
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -47,7 +53,7 @@ margin_left = 4.0
 margin_top = 6.0
 margin_right = 204.0
 margin_bottom = 326.0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="Control/Card"]
 anchor_left = 0.5
@@ -55,13 +61,13 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -82.0
-margin_top = -309.053
+margin_top = -340.053
 margin_right = 82.0
-margin_bottom = -9.05304
+margin_bottom = -40.0531
 grow_horizontal = 0
 grow_vertical = 0
 rect_pivot_offset = Vector2( -0.84198, 87.3684 )
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "card"
 align = 1
@@ -80,9 +86,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -100.0
-margin_top = -320.0
-margin_right = 100.0
+margin_left = -131.921
+margin_top = -332.277
+margin_right = 115.079
+margin_bottom = 54.7226
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -95,7 +102,7 @@ margin_left = 4.0
 margin_top = 6.0
 margin_right = 204.0
 margin_bottom = 326.0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="Control/Card2"]
 anchor_left = 0.5
@@ -103,13 +110,13 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -82.0
-margin_top = -309.053
+margin_top = -340.053
 margin_right = 82.0
-margin_bottom = -9.05304
+margin_bottom = -40.0531
 grow_horizontal = 0
 grow_vertical = 0
 rect_pivot_offset = Vector2( -0.210358, 84.2105 )
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "card"
 align = 1
@@ -129,8 +136,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -200.0
-margin_top = -320.0
+margin_left = -231.921
+margin_top = -332.277
+margin_right = 15.0789
+margin_bottom = 54.7226
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -143,20 +152,20 @@ margin_left = 4.0
 margin_top = 6.0
 margin_right = 204.0
 margin_bottom = 326.0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="Control/Card3"]
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -82.0
-margin_top = 10.947
+margin_top = -20.053
 margin_right = 82.0
-margin_bottom = -9.05304
+margin_bottom = -40.0531
 grow_horizontal = 0
 grow_vertical = 0
 rect_pivot_offset = Vector2( 1.47388, 84.2105 )
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "card"
 align = 1
@@ -182,13 +191,30 @@ margin_bottom = -50.0
 [node name="Card" type="TextureRect" parent="Consequence"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -320.0
+margin_left = -1.0
+margin_top = -322.274
 margin_right = 803.0
-texture = ExtResource( 3 )
+margin_bottom = 58.7258
+texture = ExtResource( 6 )
 expand = true
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Label2" type="Label" parent="Consequence/Card"]
+modulate = Color( 1, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 42.0
+margin_top = 22.0
+margin_right = -29.0
+margin_bottom = -316.0
+custom_fonts/font = ExtResource( 5 )
+text = "you lost: 0
+"
+align = 1
+valign = 1
+autowrap = true
 
 [node name="Shadow" type="TextureRect" parent="Consequence/Card"]
 modulate = Color( 0, 0, 0, 0.156863 )
@@ -197,21 +223,21 @@ margin_left = 4.0
 margin_top = 6.0
 margin_right = 204.0
 margin_bottom = 326.0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="Consequence/Card"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -383.5
-margin_top = -309.0
-margin_right = 380.5
-margin_bottom = -9.0
+margin_left = -371.0
+margin_top = -359.0
+margin_right = 364.0
+margin_bottom = -35.0
 grow_horizontal = 0
 grow_vertical = 0
 rect_pivot_offset = Vector2( -0.84198, 87.3684 )
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "card"
 align = 1
@@ -221,26 +247,30 @@ clip_text = true
 
 [node name="Button4" type="Button" parent="Consequence/Card"]
 pause_mode = 2
-margin_right = 793.0
-margin_bottom = 320.0
+margin_left = 21.0
+margin_top = 10.0
+margin_right = 781.0
+margin_bottom = 361.0
 flat = true
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 100.0
-margin_top = 80.0
+margin_top = 24.5983
 margin_right = -100.0
-margin_bottom = -200.0
-custom_fonts/font = ExtResource( 4 )
+margin_bottom = -255.402
+custom_fonts/font = ExtResource( 5 )
 autowrap = true
 
-[node name="Language" type="Button" parent="."]
-margin_left = 862.512
-margin_top = 175.791
-margin_right = 1009.51
-margin_bottom = 222.791
-text = "Switch Language"
+[node name="Language" type="TextureButton" parent="."]
+margin_left = 894.433
+margin_top = 100.899
+margin_right = 1041.43
+margin_bottom = 206.899
+toggle_mode = true
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
 
 [connection signal="button_down" from="Control/Card/Button" to="." method="_on_Button_button_down"]
 [connection signal="button_down" from="Control/Card2/Button2" to="." method="_on_Button2_button_down"]

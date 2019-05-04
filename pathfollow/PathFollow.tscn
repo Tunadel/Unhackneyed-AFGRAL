@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Lvls/PathFollow.gd" type="Script" id=1]
+
+[node name="PathFollow" type="PathFollow"]
+transform = Transform( 0.999638, -3.96578e-007, 0.0268897, 2.03159e-007, 1, 7.19572e-006, -0.0268898, -7.18769e-006, 0.999634, -1.60238, 0.536729, 22.842 )
+offset = 3.21
+rotation_mode = 2
+script = ExtResource( 1 )
+

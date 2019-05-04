@@ -68,10 +68,12 @@ func cosequence():
 	consequence = text.cosequence
 	get_node("Consequence/Card/Label").set_text(consequence[cunrret][button-1])
 
-func refuge(var c):
+func refuge(var c = 0):
 	var r = int(get_parent().get_parent().get_node("CanvasLayer/Passagenrs/Number").get_text())
 	r += c
 	get_parent().get_parent().get_node("CanvasLayer/Passagenrs/Number").set_text(str(r))
+	get_node("Consequence/Card/Label2").set_text("you lost: " + str(c))
+	
 
 func _on_Language_button_down():
 	match language:
@@ -94,22 +96,32 @@ func action(var a,var b):
 	match a:
 		0:
 			match b:
+				1:
+					refuge(0)
 				2:
 					refuge(-5)
 				3:
 					refuge(-10)
 		1:
 			match b:
+				1:
+					refuge(0)
 				2:
 					refuge(-1)
+				3:
+					refuge(0)
 		2:
 			match b:
 				1:
 					refuge(-1)
 				2: 
 					refuge(-15)
+				3:
+					refuge(0)
 		3:
 			match b:
+				1:
+					refuge(0)
 				2:
 					refuge(-10)
 				3:
@@ -118,8 +130,16 @@ func action(var a,var b):
 			match b:
 				1:
 					get_tree().change_scene("res://Ui/Game OVer.tscn")
+				2:
+					refuge(0)
+				3:
+					refuge(0)
 		5: 
 			match b:
+				1:
+					refuge(0)
+				2:
+					refuge(0)
 				3:
 					refuge(-5)
 		6:
@@ -128,6 +148,8 @@ func action(var a,var b):
 					refuge(15)
 				2:
 					refuge(30)
+				3:
+					refuge(0)
 		7:
 			match b:
 				1:
@@ -140,10 +162,16 @@ func action(var a,var b):
 			match b:
 				1:
 					refuge(-10)
+				2:
+					refuge(0)
+				3:
+					refuge(0)
 		10:
 			match b:
 				1:
 					refuge(-25)
+				2:
+					refuge(0)
 				3:
 					refuge(-10)
 #		11:
@@ -154,6 +182,8 @@ func action(var a,var b):
 #					refuge(-20)
 		11:
 			match b :
+				1:
+					refuge(0)
 				2:
 					refuge(-30)
 				3:
