@@ -1,21 +1,22 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Assets/Materials/boat_shader.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Materials/blue_shader.tres" type="Material" id=2]
 [ext_resource path="res://Assets/particles/Smoke.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Textures/bubbles/bubbles.tres" type="Texture" id=4]
-[ext_resource path="res://Ui/mouse/mouse.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Models/Camera Movment.gd" type="Script" id=6]
-[ext_resource path="res://Assets/Models/Mouse Follow.gd" type="Script" id=7]
-[ext_resource path="res://Assets/Models/Power.gd" type="Script" id=8]
-[ext_resource path="res://systems/colision_detection3.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Ui/Event_Select.tscn" type="PackedScene" id=10]
-[ext_resource path="res://sound/sfx-ogg/Pop_Pop_Boat_Engine.wav" type="AudioStream" id=11]
-[ext_resource path="res://Assets/Models/Boat Sound.gd" type="Script" id=12]
-[ext_resource path="res://Assets/Models/Puase.gd" type="Script" id=13]
-[ext_resource path="res://Ui/Volume.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Ui/Back to Main Menu.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Assets/Models/Passagenrs.gd" type="Script" id=16]
+[ext_resource path="res://Assets/Models/Camera Movment.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Models/Mouse Follow.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Models/Power.gd" type="Script" id=7]
+[ext_resource path="res://systems/colision_detection3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Ui/Event_Select.tscn" type="PackedScene" id=9]
+[ext_resource path="res://sound/sfx-ogg/Pop_Pop_Boat_Engine.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Models/Boat Sound.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Models/Puase.gd" type="Script" id=12]
+[ext_resource path="res://Ui/Volume.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Ui/Back to Main Menu.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Ui/mouse/mouse.tscn" type="PackedScene" id=15]
+[ext_resource path="res://exports card/ui-08.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Models/Passagenrs.gd" type="Script" id=17]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1, 1.92066 )
@@ -734,26 +735,24 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30898, 1.3659, 0.300463 )
 transform = Transform( -8.62863e-008, 1.34035e-023, -2.424, -3.0439e-015, 1, 2.56417e-022, 1.974, 0, -1.05956e-007, 0.168, -0.765, -0.041 )
 mesh = SubResource( 37 )
 
-[node name="mouse" parent="Spatial" instance=ExtResource( 5 )]
-
 [node name="Camera Movment" type="Node2D" parent="Spatial"]
 editor/display_folded = true
 position = Vector2( 512, 300 )
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="Spatial/Camera Movment"]
 current = true
 
 [node name="Mouse Follow" type="Node2D" parent="Spatial"]
 position = Vector2( 512, 300 )
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 speed_forward = 0.6
 desaleration = 0.95
 
 [node name="Power" type="CSGMesh" parent="Spatial"]
 transform = Transform( 0, -1, -6.6815e-022, 0, 6.6815e-022, 1, -1, 0, 0, 0, -0.5, 0.503 )
 mesh = SubResource( 39 )
-script = ExtResource( 8 )
+script = ExtResource( 7 )
 
 [node name="Power2" type="Polygon2D" parent="Spatial"]
 visible = false
@@ -764,46 +763,46 @@ polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [node name="Spatial" type="Spatial" parent="Spatial"]
 transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, 4.67705e-022, -0.7, 0 )
 
-[node name="colision_detection0" parent="Spatial/Spatial" instance=ExtResource( 9 )]
+[node name="colision_detection0" parent="Spatial/Spatial" instance=ExtResource( 8 )]
 transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, 0, 0, 0 )
 enabled = true
 cast_to = Vector3( 0, 0, -3 )
 collision_mask = 2
 
-[node name="colision_detection1" parent="Spatial/Spatial" instance=ExtResource( 9 )]
+[node name="colision_detection1" parent="Spatial/Spatial" instance=ExtResource( 8 )]
 transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, 0, 0, 0 )
 enabled = true
 cast_to = Vector3( -2, 0, 0 )
 collision_mask = 2
 
-[node name="colision_detection2" parent="Spatial/Spatial" instance=ExtResource( 9 )]
+[node name="colision_detection2" parent="Spatial/Spatial" instance=ExtResource( 8 )]
 transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, 0, 0, 0 )
 enabled = true
 cast_to = Vector3( 2, 0, 0 )
 collision_mask = 2
 
-[node name="colision_detection3" parent="Spatial/Spatial" instance=ExtResource( 9 )]
+[node name="colision_detection3" parent="Spatial/Spatial" instance=ExtResource( 8 )]
 transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, 0, 0, 0 )
 enabled = true
 cast_to = Vector3( 0, 0, 3 )
 collision_mask = 2
 
-[node name="Control" parent="Spatial" instance=ExtResource( 10 )]
+[node name="Control" parent="Spatial" instance=ExtResource( 9 )]
 pause_mode = 2
 
 [node name="Boat Sound" type="AudioStreamPlayer" parent="Spatial"]
-stream = ExtResource( 11 )
-script = ExtResource( 12 )
+stream = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="pause" type="Control" parent="Spatial"]
 pause_mode = 2
 editor/display_folded = true
-script = ExtResource( 13 )
+script = ExtResource( 12 )
 
 [node name="dark" type="Polygon2D" parent="Spatial/pause"]
 position = Vector2( -1.48969, 0 )
 color = Color( 0, 0, 0, 0.25098 )
-polygon = PoolVector2Array( -32.5196, -27.0811, -33.8799, 640.863, 1106.11, 632.7, 1084.35, -40.6848 )
+polygon = PoolVector2Array( -34.2082, -39.8603, -33.8799, 640.863, 1084.32, 637.788, 1084.35, -40.6848 )
 
 [node name="Button" type="Button" parent="Spatial/pause"]
 margin_left = 467.982
@@ -813,16 +812,25 @@ margin_bottom = 264.453
 rect_pivot_offset = Vector2( 46, 23 )
 text = "pause"
 
-[node name="Volume" parent="Spatial/pause" instance=ExtResource( 14 )]
+[node name="Volume" parent="Spatial/pause" instance=ExtResource( 13 )]
 margin_left = 409.732
 margin_top = 294.203
 margin_right = 623.732
 margin_bottom = 319.203
 
-[node name="Back to Main Menu" parent="Spatial/pause" instance=ExtResource( 15 )]
+[node name="Back to Main Menu" parent="Spatial/pause" instance=ExtResource( 14 )]
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Spatial"]
+
+[node name="mouse" parent="Spatial" instance=ExtResource( 15 )]
+
+[node name="medikit" type="Sprite" parent="Spatial"]
+visible = false
+position = Vector2( 823.099, 49.4979 )
+scale = Vector2( 0.400321, 0.400321 )
+texture = ExtResource( 16 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="Passagenrs" type="Label" parent="CanvasLayer"]
 margin_left = 918.168
@@ -834,7 +842,7 @@ text = "passangers:
 "
 align = 1
 valign = 1
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 
 [node name="Number" type="Label" parent="CanvasLayer/Passagenrs"]
 margin_left = 11.0

@@ -91,6 +91,13 @@ func _on_Button4_button_down():
 	get_tree().set_pause(false)
 	pass # Replace with function body.
 
+func medkit(var boolean):
+	if boolean:
+		get_parent().get_node("medikit").show()
+		get_node("Consequence/Card/Label2").set_text("you received a medkit")
+	else:
+		get_parent().get_node("medikit").hide()
+
 func action(var a,var b):
 	button = b
 	match a:
@@ -138,6 +145,7 @@ func action(var a,var b):
 			match b:
 				1:
 					refuge(0)
+					medkit(true)
 				2:
 					refuge(0)
 				3:
@@ -199,3 +207,4 @@ func action(var a,var b):
 	get_node("Control").hide()
 	get_node("Consequence").show()
 	cosequence()
+
