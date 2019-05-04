@@ -151,6 +151,7 @@ surfaces/0 = {
 }
 
 [sub_resource type="CylinderShape" id=14]
+radius = 3.54484
 
 [sub_resource type="ArrayMesh" id=15]
 surfaces/0 = {
@@ -191,12 +192,12 @@ material/0 = null
 [node name="StaticBody3" type="StaticBody" parent="Cube" groups=[
 "iceberg",
 ]]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 1.04835, -0.013886, 1.10086 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 4.64346, -0.63085, 4.21374 )
 collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape" type="CollisionShape" parent="Cube/StaticBody3"]
-transform = Transform( 0.496352, 0, 0, 0, 0.496352, 0, 0, 0, 0.496352, 0, 0, 0 )
+transform = Transform( 0.496352, 0, 0, 0, 0.496352, 0, 0, 0, 0.496352, -0.553534, 0, 0 )
 shape = SubResource( 14 )
 
 [node name="Cube001" type="MeshInstance" parent="."]
@@ -204,29 +205,8 @@ transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.6, 4.95532, -0.496369, 1.94
 mesh = SubResource( 15 )
 material/0 = null
 
-[node name="StaticBody2" type="StaticBody" parent="Cube001" groups=[
-"iceberg",
-]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.9375, 0, 0, 0 )
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape" type="CollisionShape" parent="Cube001/StaticBody2"]
-transform = Transform( 0.496352, 0, 0, 0, 0.496352, 0, 0, 0, 0.496352, 0, 0, 0 )
-shape = SubResource( 14 )
-
 [node name="Cube002" type="MeshInstance" parent="."]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.921574, -0.525476, 5.05625 )
 mesh = SubResource( 16 )
 material/0 = null
-
-[node name="StaticBody" type="StaticBody" parent="Cube002" groups=[
-"iceberg",
-]]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape" type="CollisionShape" parent="Cube002/StaticBody"]
-transform = Transform( 0.496352, 0, 0, 0, 0.496352, 0, 0, 0, 0.496352, 0, 0, 0 )
-shape = SubResource( 14 )
 

@@ -21,7 +21,7 @@ margin_right = 556.0
 margin_bottom = 277.474
 text = "Play"
 script = ExtResource( 2 )
-level = "res://Lvls/Test-Lvl.tscn"
+level = "res://Lvls/Test-Lvl-snow.tscn"
 
 [node name="Volume" parent="." instance=ExtResource( 3 )]
 

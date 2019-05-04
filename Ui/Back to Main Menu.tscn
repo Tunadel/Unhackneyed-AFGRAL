@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Models/Back to Main Menu.gd" type="Script" id=1]
+
+[node name="Back to Main Menu" type="Button"]
+margin_left = 465.374
+margin_top = 329.086
+margin_right = 573.374
+margin_bottom = 366.086
+text = "Main Menu"
+script = ExtResource( 1 )
+
+[connection signal="button_down" from="." to="." method="_on_Back_to_Main_Menu_button_down"]

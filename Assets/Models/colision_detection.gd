@@ -12,13 +12,12 @@ func _process(delta):
 				get_parent().get_node("Mouse Follow").event = false
 				get_parent().get_node("Control").event(i)
 				play_event(i)
-				object = get_collider()
-				object.get_child(0).set_disabled(true)
-				var timer = Timer.new()
-				timer.set_wait_time(2)
-				timer.connect("timeout",self,"_on_timer_timeout") 
-				add_child(timer) #to process
-				timer.start() #to start
+			self.set_enabled(false) 
+			var timer = Timer.new()
+			timer.set_wait_time(1)
+			timer.connect("timeout",self,"_on_timer_timeout") 
+			add_child(timer) #to process
+			timer.start() #to start
 	
 func play_event(event):
 	event_enabler(true)
@@ -28,5 +27,5 @@ func event_enabler(var boolean):
 	get_tree().set_pause(boolean)
 
 func _on_timer_timeout():
-	object.get_child(0).set_disabled(false)
+	self.set_enabled(true) 
 	get_parent().get_node("Mouse Follow").event = true

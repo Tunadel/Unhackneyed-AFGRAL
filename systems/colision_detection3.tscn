@@ -9,5 +9,5 @@ enabled = true
 cast_to = Vector3( 0, -5, 0 )
 collision_mask = 2
 script = ExtResource( 1 )
-group = [ "tiles", "tiles", "iceberg", "tiles", "tiles", "tiles", "tiles", "bridge", "tiles", "tiles", "tiles", "tiles", "tiles", "tiles" ]
+group = [ "tiles", "tiles", "tiles", "iceberg", "tiles", "bridge", "tiles", "tiles", "tiles", "tiles", "tiles", "pyrates", "tiles", "tiles" ]
 

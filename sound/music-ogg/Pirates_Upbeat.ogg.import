@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Pirates_Upbeat.ogg-7b5be708d2c180d82fe07d1ab7a0787a.oggstr"
+
+[deps]
+
+source_file="res://sound/music-ogg/Pirates_Upbeat.ogg"
+dest_files=[ "res://.import/Pirates_Upbeat.ogg-7b5be708d2c180d82fe07d1ab7a0787a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

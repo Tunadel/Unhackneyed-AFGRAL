@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Pirates_Slow.ogg-6c26f454d71b000b71d49d1aad2b9246.oggstr"
+
+[deps]
+
+source_file="res://sound/music-ogg/Pirates_Slow.ogg"
+dest_files=[ "res://.import/Pirates_Slow.ogg-6c26f454d71b000b71d49d1aad2b9246.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
