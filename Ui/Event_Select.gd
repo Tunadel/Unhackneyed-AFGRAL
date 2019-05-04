@@ -9,6 +9,7 @@ export var Title = ""
 var event 
 var cunrret
 var gameover = preload("res://game_over.gd").new()
+var language = "english"
 
 func _ready():
 	self.hide()
@@ -32,7 +33,11 @@ func save_Stats():
 
 func load_Stats():
 	load_saver.loader()
-	text = get_node("Languages").english
+	match language:
+		"english":
+			text = get_node("Languages").english
+		"french":
+			text = get_node("Languages").french
 
 func get_Stats():
 	text = [
@@ -110,13 +115,13 @@ func action(var a,var b):
 					refuge(-25)
 				3:
 					refuge(-10)
+#		11:
+#			match b:
+#				1:
+#					get_tree().change_scene("res://Ui/Game OVer.tscn")
+#				3:
+#					refuge(-20)
 		11:
-			match b:
-				1:
-					get_tree().change_scene("res://Ui/Game OVer.tscn")
-				3:
-					refuge(-20)
-		12:
 			match b :
 				2:
 					refuge(-30)
@@ -138,3 +143,12 @@ func refuge(var c):
 	var r = int(get_parent().get_parent().get_node("CanvasLayer/Passagenrs/Number").get_text())
 	r += c
 	get_parent().get_parent().get_node("CanvasLayer/Passagenrs/Number").set_text(str(r))
+
+func _on_Language_button_down():
+	match language:
+		"english":
+			language = "french"
+		"french":
+			language = "english"
+	event_selector(cunrret)
+	pass # Replace with function body.
