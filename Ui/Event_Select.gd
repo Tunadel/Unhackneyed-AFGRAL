@@ -7,19 +7,23 @@ export var Card2 = ""
 export var Card3 = ""
 export var Title = ""
 var event 
+var consequence
 var cunrret
 var gameover = preload("res://game_over.gd").new()
 var language = "english"
+var button = 0
 
 func _ready():
 	self.hide()
+	load_Stats()
 
 func event(var i):
+	get_node("Control").show()
+	get_node("Consequence").hide()
 	self.show()
 	event_selector(i)
 
 func event_selector(var i):
-	load_Stats()
 	event = text.all
 	$Control/Card/Label.set_text(event[i][0])
 	$Control/Card2/Label.set_text(event[i][1])
@@ -58,8 +62,35 @@ func _on_Button2_button_down():
 func _on_Button3_button_down():
 	action(cunrret,3)
 	pass # Replace with function body.
+#	get_tree().set_pause(false)
+
+func cosequence():
+	consequence = text.cosequence
+	get_node("Consequence/Card/Label").set_text(consequence[cunrret][button-1])
+
+func refuge(var c):
+	var r = int(get_parent().get_parent().get_node("CanvasLayer/Passagenrs/Number").get_text())
+	r += c
+	get_parent().get_parent().get_node("CanvasLayer/Passagenrs/Number").set_text(str(r))
+
+func _on_Language_button_down():
+	match language:
+		"english":
+			language = "french"
+		"french":
+			language = "english"
+	load_Stats()
+	event_selector(cunrret)
+	cosequence()
+	pass # Replace with function body.
+
+func _on_Button4_button_down():
+	self.hide()
+	get_tree().set_pause(false)
+	pass # Replace with function body.
 
 func action(var a,var b):
+	button = b
 	match a:
 		0:
 			match b:
@@ -135,20 +166,6 @@ func action(var a,var b):
 					get_tree().change_scene("res://Ui/Game OVer.tscn")
 				3:
 					refuge(-30)
-
-	self.hide()
-	get_tree().set_pause(false)
-
-func refuge(var c):
-	var r = int(get_parent().get_parent().get_node("CanvasLayer/Passagenrs/Number").get_text())
-	r += c
-	get_parent().get_parent().get_node("CanvasLayer/Passagenrs/Number").set_text(str(r))
-
-func _on_Language_button_down():
-	match language:
-		"english":
-			language = "french"
-		"french":
-			language = "english"
-	event_selector(cunrret)
-	pass # Replace with function body.
+	get_node("Control").hide()
+	get_node("Consequence").show()
+	cosequence()

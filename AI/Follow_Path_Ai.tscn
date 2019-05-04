@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Lvls/PathFollow.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1, 1, 2.72482 )
+
+[node name="PathFollow" type="PathFollow"]
+editor/display_folded = true
+transform = Transform( 0.999638, -3.96578e-007, 0.0268897, 2.03159e-007, 1, 7.19572e-006, -0.0268898, -7.18769e-006, 0.999634, -1.60238, 0.536729, 22.842 )
+offset = 3.21
+rotation_mode = 2
+script = ExtResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="." groups=[
+"pyrates",
+]]
+transform = Transform( -0.968886, 5.80929e-006, -0.247505, 4.9652e-006, 1, 4.03448e-006, 0.247507, 2.68007e-006, -0.968887, 4.76837e-007, 1, -5.72205e-006 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody" groups=[
+"pyrates",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.461168 )
+shape = SubResource( 1 )
+
