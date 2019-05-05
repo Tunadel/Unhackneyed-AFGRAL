@@ -660,12 +660,13 @@ shape = SubResource( 1 )
 [node name="camera" type="Spatial" parent="."]
 
 [node name="Camera" type="Camera" parent="camera"]
-transform = Transform( -4.37114e-008, 0.766044, -0.642788, 0, 0.642788, 0.766044, 1, 3.34849e-008, -2.80972e-008, -14.4766, 17.3712, -9.06675e-007 )
+transform = Transform( -4.37114e-008, 0.766044, -0.642788, 0, 0.642788, 0.766044, 1, 3.34849e-008, -2.80972e-008, -19.5369, 22.9088, -1.39078e-006 )
 projection = 1
 current = true
 size = 12.4939
 
 [node name="Spatial" type="Spatial" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 8.74228e-008, 0, -8.74228e-008, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Cube" type="MeshInstance" parent="Spatial"]
