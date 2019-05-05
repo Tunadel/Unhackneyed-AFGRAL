@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Textures/waterfundo.png" type="Texture" id=1]
 [ext_resource path="res://Ui/boat.png" type="Texture" id=2]
@@ -8,19 +8,17 @@
 [ext_resource path="res://exports card/ui-03.png" type="Texture" id=6]
 [ext_resource path="res://Ui/Play.gd" type="Script" id=7]
 [ext_resource path="res://Ui/Quit Game.tscn" type="PackedScene" id=8]
-[ext_resource path="res://exports card/ui-04.png" type="Texture" id=9]
-[ext_resource path="res://Ui/Quit Game.gd" type="Script" id=10]
-[ext_resource path="res://sound/music-ogg/Track_5.ogg" type="AudioStream" id=11]
-[ext_resource path="res://Ui/ShortStack-Regular.otf" type="DynamicFontData" id=12]
+[ext_resource path="res://sound/music-ogg/Track_5.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Ui/ShortStack-Regular.otf" type="DynamicFontData" id=10]
 
-[sub_resource type="VisualShaderNodeTexture" id=4]
+[sub_resource type="VisualShaderNodeTexture" id=1]
 output_port_for_preview = 0
 texture = ExtResource( 1 )
 
-[sub_resource type="VisualShaderNodeInput" id=7]
+[sub_resource type="VisualShaderNodeInput" id=2]
 input_name = "uv"
 
-[sub_resource type="VisualShader" id=5]
+[sub_resource type="VisualShader" id=3]
 code = "shader_type canvas_item;
 uniform sampler2D tex_frg_3;
 
@@ -57,23 +55,22 @@ mode = 1
 flags/light_only = false
 nodes/vertex/0/position = Vector2( 560, 100 )
 nodes/fragment/0/position = Vector2( 980, 60 )
-nodes/fragment/3/node = SubResource( 4 )
+nodes/fragment/3/node = SubResource( 1 )
 nodes/fragment/3/position = Vector2( 800, 60 )
-nodes/fragment/4/node = SubResource( 7 )
+nodes/fragment/4/node = SubResource( 2 )
 nodes/fragment/4/position = Vector2( 639.006, 204.465 )
 nodes/fragment/connections = PoolIntArray( 3, 0, 0, 0, 4, 0, 3, 0 )
 
-[sub_resource type="ShaderMaterial" id=6]
-shader = SubResource( 5 )
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
 
-[sub_resource type="Theme" id=9]
+[sub_resource type="Theme" id=5]
 default_font = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=8]
-font_data = ExtResource( 12 )
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 10 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "start"
+[sub_resource type="Animation" id=7]
 length = 12.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("fundo/Label2:visible")
@@ -268,9 +265,9 @@ tracks/15/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=8]
 size = 22
-font_data = ExtResource( 12 )
+font_data = ExtResource( 10 )
 
 [node name="Control" type="Control"]
 pause_mode = 2
@@ -278,7 +275,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource( 6 )
+material = SubResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -303,7 +300,7 @@ margin_left = -157.549
 margin_top = 25.3604
 margin_right = -20.5491
 margin_bottom = 41.3604
-theme = SubResource( 9 )
+theme = SubResource( 5 )
 min_value = 40.0
 step = 10.0
 
@@ -326,17 +323,11 @@ texture_normal = ExtResource( 6 )
 script = ExtResource( 7 )
 level = "res://Lvls/Test-Lvl-snow.tscn"
 
-[node name="Quit Game" type="TextureButton" parent="Control" instance=ExtResource( 8 )]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -247.0
-margin_bottom = 100.0
-texture_normal = ExtResource( 9 )
-script = ExtResource( 10 )
+[node name="Quit Game" parent="Control" instance=ExtResource( 8 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
-stream = ExtResource( 11 )
+stream = ExtResource( 9 )
 autoplay = true
 
 [node name="Label" type="Label" parent="."]
@@ -344,7 +335,7 @@ margin_left = 25.6248
 margin_top = 25.6248
 margin_right = 272.625
 margin_bottom = 137.625
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 text = "Code: Galo
 Game Design: Caroldot
 Art & Ui:Tunadel
@@ -353,7 +344,7 @@ Translation: Igor Carnaúba"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "start"
-anims/start = SubResource( 1 )
+anims/start = SubResource( 7 )
 
 [node name="fundo" type="ColorRect" parent="."]
 editor/display_folded = true
@@ -384,7 +375,7 @@ margin_left = -219.0
 margin_top = -29.5
 margin_right = 219.0
 margin_bottom = 29.5
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 8 )
 text = "
 AFGRAL GAMEDEV COMPETITION 2019"
 align = 1
@@ -407,7 +398,7 @@ anchor_right = 0.5
 margin_left = -219.0
 margin_right = 219.0
 margin_bottom = 28.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 8 )
 text = "Created by:"
 align = 1
 
@@ -422,7 +413,7 @@ margin_left = -219.0
 margin_top = -14.0
 margin_right = 219.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 8 )
 text = "Caroldot"
 align = 1
 
@@ -435,7 +426,7 @@ margin_left = -220.228
 margin_top = 40.5154
 margin_right = 217.772
 margin_bottom = 68.5154
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 8 )
 text = "Galo"
 align = 1
 
@@ -450,7 +441,7 @@ margin_left = -219.0
 margin_top = 27.7431
 margin_right = 219.0
 margin_bottom = 55.7431
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 8 )
 text = "Tunadel"
 align = 1
 
@@ -464,9 +455,8 @@ anchor_bottom = 1.0
 margin_left = -219.0
 margin_top = -28.0
 margin_right = 219.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 8 )
 text = "Scowsh"
 align = 1
 
 [connection signal="button_down" from="Control/Play" to="Control/Play" method="_on_Button_button_down"]
-[connection signal="button_down" from="Control/Quit Game" to="Control/Quit Game" method="_on_Quit_Game_button_down"]
