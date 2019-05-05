@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Assets/Materials/boat_shader.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Materials/blue_shader.tres" type="Material" id=2]
@@ -9,14 +9,12 @@
 [ext_resource path="res://Assets/Models/Power.gd" type="Script" id=7]
 [ext_resource path="res://systems/colision_detection3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Ui/Event_Select.tscn" type="PackedScene" id=9]
-[ext_resource path="res://sound/sfx-ogg/Pop_Pop_Boat_Engine.wav" type="AudioStream" id=10]
-[ext_resource path="res://Assets/Models/Boat Sound.gd" type="Script" id=11]
-[ext_resource path="res://Assets/Models/Puase.gd" type="Script" id=12]
-[ext_resource path="res://Ui/Volume.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Ui/Back to Main Menu.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Ui/mouse/mouse.tscn" type="PackedScene" id=15]
-[ext_resource path="res://exports card/ui-08.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Models/Passagenrs.gd" type="Script" id=17]
+[ext_resource path="res://Assets/Models/Puase.gd" type="Script" id=10]
+[ext_resource path="res://Ui/Volume.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Ui/Back to Main Menu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Ui/mouse/mouse.tscn" type="PackedScene" id=13]
+[ext_resource path="res://exports card/ui-08.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Models/Passagenrs.gd" type="Script" id=15]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1, 1.92066 )
@@ -664,9 +662,9 @@ transform = Transform( -4.37114e-008, 0.766044, -0.642788, 0, 0.642788, 0.766044
 projection = 1
 current = true
 size = 12.4939
+far = 50.0
 
 [node name="Spatial" type="Spatial" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 8.74228e-008, 0, -8.74228e-008, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Cube" type="MeshInstance" parent="Spatial"]
@@ -791,14 +789,10 @@ collision_mask = 2
 [node name="Control" parent="Spatial" instance=ExtResource( 9 )]
 pause_mode = 2
 
-[node name="Boat Sound" type="AudioStreamPlayer" parent="Spatial"]
-stream = ExtResource( 10 )
-script = ExtResource( 11 )
-
 [node name="pause" type="Control" parent="Spatial"]
 pause_mode = 2
 editor/display_folded = true
-script = ExtResource( 12 )
+script = ExtResource( 10 )
 
 [node name="dark" type="Polygon2D" parent="Spatial/pause"]
 position = Vector2( -1.48969, 0 )
@@ -813,23 +807,23 @@ margin_bottom = 264.453
 rect_pivot_offset = Vector2( 46, 23 )
 text = "pause"
 
-[node name="Volume" parent="Spatial/pause" instance=ExtResource( 13 )]
+[node name="Volume" parent="Spatial/pause" instance=ExtResource( 11 )]
 margin_left = 409.732
 margin_top = 294.203
 margin_right = 623.732
 margin_bottom = 319.203
 
-[node name="Back to Main Menu" parent="Spatial/pause" instance=ExtResource( 14 )]
+[node name="Back to Main Menu" parent="Spatial/pause" instance=ExtResource( 12 )]
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Spatial"]
 
-[node name="mouse" parent="Spatial" instance=ExtResource( 15 )]
+[node name="mouse" parent="Spatial" instance=ExtResource( 13 )]
 
 [node name="medikit" type="Sprite" parent="Spatial"]
 visible = false
 position = Vector2( 823.099, 49.4979 )
 scale = Vector2( 0.400321, 0.400321 )
-texture = ExtResource( 16 )
+texture = ExtResource( 14 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -843,7 +837,7 @@ text = "passangers:
 "
 align = 1
 valign = 1
-script = ExtResource( 17 )
+script = ExtResource( 15 )
 
 [node name="Number" type="Label" parent="CanvasLayer/Passagenrs"]
 margin_left = 11.0

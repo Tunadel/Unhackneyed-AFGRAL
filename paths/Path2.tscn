@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://pathfollow/PathFollow.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Materials/shark.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Curve3D" id=1]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -2.73675, 0.550203, 19.8402, 0, 0, 0, 0, 0, 0, -0.0356426, 0.51812, 26.988, 0, 0, 0, 0, 0, 0, -2.78678, 0.49367, 33.0501, 0, 0, 0, 0, 0, 0, -7.28154, 0.503182, 35.548, 0, 0, 0, 0, 0, 0, -11.5272, 0.512171, 34.8559, 0, 0, 0, 0, 0, 0, -11.7784, 0.494389, 27.4653, 0, 0, 0, 0, 0, 0, -11.5517, 0.610384, 21.4663, 0, 0, 0, 0, 0, 0, -7.36557, 0.575274, 18.0235, 0, 0, 0, 0, 0, 0, -2.73694, 0.656394, 19.8205 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[node name="Path2" type="Path"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00657463, -0.474736, -0.229591 )
+curve = SubResource( 1 )
+
+[node name="PathFollow" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.362303, 0.0148521, 0.931938, 0.00133064, 0.999864, -0.0164517, -0.932058, 0.00720059, 0.362233, -11.6977, 0.500101, 29.8392 )
+offset = 28.68
+
+[node name="Scene Root" parent="PathFollow" instance=ExtResource( 2 )]
+transform = Transform( 0.336773, -0.00216925, -0.369566, 0.00174648, 0.499995, -0.00134332, 0.369568, -0.000386087, 0.336778, -1.90735e-006, 0, -1.90735e-006 )
+

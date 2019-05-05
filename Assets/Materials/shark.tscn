@@ -27,7 +27,9 @@ autoplay = "walk"
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0" groups=[
+"shark",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.768346, 0, 0 )
 shape = SubResource( 2 )
 

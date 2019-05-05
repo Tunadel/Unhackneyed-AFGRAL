@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Ui/Event_Select.gd" type="Script" id=1]
 [ext_resource path="res://Ui/Languages.gd" type="Script" id=2]
 [ext_resource path="res://exports card/ui-01.png" type="Texture" id=3]
 [ext_resource path="res://Ui/fonts/card.png" type="Texture" id=4]
 [ext_resource path="res://Ui/fonts/Text_Font.tres" type="DynamicFont" id=5]
-[ext_resource path="res://exports card/ui-02.png" type="Texture" id=6]
-[ext_resource path="res://exports card/ui-06.png" type="Texture" id=7]
-[ext_resource path="res://exports card/ui-05.png" type="Texture" id=8]
+[ext_resource path="res://Ui/Button.gd" type="Script" id=6]
+[ext_resource path="res://exports card/ui-02.png" type="Texture" id=7]
+[ext_resource path="res://exports card/ui-06.png" type="Texture" id=8]
+[ext_resource path="res://exports card/ui-05.png" type="Texture" id=9]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -30,9 +31,9 @@ editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 100.0
-margin_top = 150.0
+margin_top = 134.968
 margin_right = -100.0
-margin_bottom = -50.0
+margin_bottom = -65.0317
 
 [node name="Card" type="TextureRect" parent="Control"]
 anchor_top = 1.0
@@ -40,7 +41,8 @@ anchor_bottom = 1.0
 margin_left = -31.9212
 margin_top = -332.277
 margin_right = 215.079
-margin_bottom = 54.7226
+margin_bottom = 54.723
+rect_pivot_offset = Vector2( 106.283, 201.757 )
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -80,6 +82,7 @@ pause_mode = 2
 margin_right = 199.0
 margin_bottom = 320.0
 flat = true
+script = ExtResource( 6 )
 
 [node name="Card2" type="TextureRect" parent="Control"]
 anchor_left = 0.5
@@ -89,7 +92,8 @@ anchor_bottom = 1.0
 margin_left = -131.921
 margin_top = -332.277
 margin_right = 115.079
-margin_bottom = 54.7226
+margin_bottom = 54.723
+rect_pivot_offset = Vector2( 118.299, 203.428 )
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -124,12 +128,13 @@ valign = 2
 autowrap = true
 clip_text = true
 
-[node name="Button2" type="Button" parent="Control/Card2"]
+[node name="Button" type="Button" parent="Control/Card2"]
 pause_mode = 2
 margin_left = 1.6842
 margin_right = 200.684
 margin_bottom = 320.0
 flat = true
+script = ExtResource( 6 )
 
 [node name="Card3" type="TextureRect" parent="Control"]
 anchor_left = 1.0
@@ -138,8 +143,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -231.921
 margin_top = -332.277
-margin_right = 15.0789
-margin_bottom = 54.7226
+margin_right = 15.079
+margin_bottom = 54.723
+rect_pivot_offset = Vector2( 128.644, 198.417 )
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -173,20 +179,22 @@ valign = 2
 autowrap = true
 clip_text = true
 
-[node name="Button3" type="Button" parent="Control/Card3"]
+[node name="Button" type="Button" parent="Control/Card3"]
 pause_mode = 2
 margin_left = 1.26318
 margin_right = 200.263
 margin_bottom = 320.0
+rect_pivot_offset = Vector2( 98.9882, 176.705 )
 flat = true
+script = ExtResource( 6 )
 
 [node name="Consequence" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 100.0
-margin_top = 150.0
+margin_top = 134.968
 margin_right = -100.0
-margin_bottom = -50.0
+margin_bottom = -65.0317
 
 [node name="Card" type="TextureRect" parent="Consequence"]
 anchor_top = 1.0
@@ -195,7 +203,8 @@ margin_left = -1.0
 margin_top = -322.274
 margin_right = 803.0
 margin_bottom = 58.7258
-texture = ExtResource( 6 )
+rect_pivot_offset = Vector2( 399.378, 185.074 )
+texture = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_group_": true
@@ -245,13 +254,15 @@ valign = 2
 autowrap = true
 clip_text = true
 
-[node name="Button4" type="Button" parent="Consequence/Card"]
+[node name="Button" type="Button" parent="Consequence/Card"]
 pause_mode = 2
 margin_left = 21.0
 margin_top = 10.0
 margin_right = 781.0
 margin_bottom = 361.0
+rect_pivot_offset = Vector2( 378.378, 190.105 )
 flat = true
+script = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
@@ -269,11 +280,19 @@ margin_top = 100.899
 margin_right = 1041.43
 margin_bottom = 206.899
 toggle_mode = true
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
 
 [connection signal="button_down" from="Control/Card/Button" to="." method="_on_Button_button_down"]
-[connection signal="button_down" from="Control/Card2/Button2" to="." method="_on_Button2_button_down"]
-[connection signal="button_down" from="Control/Card3/Button3" to="." method="_on_Button3_button_down"]
-[connection signal="button_down" from="Consequence/Card/Button4" to="." method="_on_Button4_button_down"]
+[connection signal="mouse_entered" from="Control/Card/Button" to="Control/Card/Button" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Card/Button" to="Control/Card/Button" method="_on_Button_mouse_exited"]
+[connection signal="button_down" from="Control/Card2/Button" to="." method="_on_Button2_button_down"]
+[connection signal="mouse_entered" from="Control/Card2/Button" to="Control/Card2/Button" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Card2/Button" to="Control/Card2/Button" method="_on_Button_mouse_exited"]
+[connection signal="button_down" from="Control/Card3/Button" to="." method="_on_Button3_button_down"]
+[connection signal="mouse_entered" from="Control/Card3/Button" to="Control/Card3/Button" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Card3/Button" to="Control/Card3/Button" method="_on_Button_mouse_exited"]
+[connection signal="button_down" from="Consequence/Card/Button" to="." method="_on_Button4_button_down"]
+[connection signal="mouse_entered" from="Consequence/Card/Button" to="Consequence/Card/Button" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="Consequence/Card/Button" to="Consequence/Card/Button" method="_on_Button_mouse_exited"]
 [connection signal="button_down" from="Language" to="." method="_on_Language_button_down"]
