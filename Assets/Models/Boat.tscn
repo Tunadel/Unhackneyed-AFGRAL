@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Assets/Materials/boat_shader.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Materials/blue_shader.tres" type="Material" id=2]
@@ -10,11 +10,12 @@
 [ext_resource path="res://systems/colision_detection3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Ui/Event_Select.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Models/Puase.gd" type="Script" id=10]
-[ext_resource path="res://Ui/Volume.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Ui/Back to Main Menu.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Ui/mouse/mouse.tscn" type="PackedScene" id=13]
-[ext_resource path="res://exports card/ui-08.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Models/Passagenrs.gd" type="Script" id=15]
+[ext_resource path="res://exports card/ui-03.png" type="Texture" id=11]
+[ext_resource path="res://Ui/Volume.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Ui/Back to Main Menu.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Ui/mouse/mouse.tscn" type="PackedScene" id=14]
+[ext_resource path="res://exports card/ui-08.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Models/Passagenrs.gd" type="Script" id=16]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1, 1.92066 )
@@ -791,7 +792,6 @@ pause_mode = 2
 
 [node name="pause" type="Control" parent="Spatial"]
 pause_mode = 2
-editor/display_folded = true
 script = ExtResource( 10 )
 
 [node name="dark" type="Polygon2D" parent="Spatial/pause"]
@@ -799,31 +799,37 @@ position = Vector2( -1.48969, 0 )
 color = Color( 0, 0, 0, 0.25098 )
 polygon = PoolVector2Array( -34.2082, -39.8603, -33.8799, 640.863, 1084.32, 637.788, 1084.35, -40.6848 )
 
-[node name="Button" type="Button" parent="Spatial/pause"]
-margin_left = 467.982
-margin_top = 218.453
-margin_right = 559.982
-margin_bottom = 264.453
+[node name="Button" type="TextureButton" parent="Spatial/pause"]
+margin_left = 435.0
+margin_top = 208.0
+margin_right = 581.0
+margin_bottom = 267.0
 rect_pivot_offset = Vector2( 46, 23 )
-text = "pause"
+texture_normal = ExtResource( 11 )
+expand = true
 
-[node name="Volume" parent="Spatial/pause" instance=ExtResource( 11 )]
+[node name="Volume" parent="Spatial/pause" instance=ExtResource( 12 )]
 margin_left = 409.732
 margin_top = 294.203
 margin_right = 623.732
 margin_bottom = 319.203
 
-[node name="Back to Main Menu" parent="Spatial/pause" instance=ExtResource( 12 )]
+[node name="Back to Main Menu" parent="Spatial/pause" instance=ExtResource( 13 )]
+margin_left = 423.0
+margin_top = 331.0
+margin_right = 596.0
+margin_bottom = 401.0
+expand = true
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Spatial"]
 
-[node name="mouse" parent="Spatial" instance=ExtResource( 13 )]
+[node name="mouse" parent="Spatial" instance=ExtResource( 14 )]
 
 [node name="medikit" type="Sprite" parent="Spatial"]
 visible = false
 position = Vector2( 823.099, 49.4979 )
 scale = Vector2( 0.400321, 0.400321 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -837,7 +843,7 @@ text = "passangers:
 "
 align = 1
 valign = 1
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 
 [node name="Number" type="Label" parent="CanvasLayer/Passagenrs"]
 margin_left = 11.0
