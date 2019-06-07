@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/5.png-a6a97a1e2f794846eb1a934ac226545f.s3tc.stex"
 path.etc2="res://.import/5.png-a6a97a1e2f794846eb1a934ac226545f.etc2.stex"
+path.etc="res://.import/5.png-a6a97a1e2f794846eb1a934ac226545f.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Textures/bubbles/5.png"
-dest_files=[ "res://.import/5.png-a6a97a1e2f794846eb1a934ac226545f.s3tc.stex", "res://.import/5.png-a6a97a1e2f794846eb1a934ac226545f.etc2.stex" ]
+dest_files=[ "res://.import/5.png-a6a97a1e2f794846eb1a934ac226545f.s3tc.stex", "res://.import/5.png-a6a97a1e2f794846eb1a934ac226545f.etc2.stex", "res://.import/5.png-a6a97a1e2f794846eb1a934ac226545f.etc.stex" ]
 
 [params]
 

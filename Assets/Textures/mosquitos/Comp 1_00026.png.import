@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/Comp 1_00026.png-7d0237d95ab2f505d03a79d37a11abea.s3tc.stex"
 path.etc2="res://.import/Comp 1_00026.png-7d0237d95ab2f505d03a79d37a11abea.etc2.stex"
+path.etc="res://.import/Comp 1_00026.png-7d0237d95ab2f505d03a79d37a11abea.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Textures/mosquitos/Comp 1_00026.png"
-dest_files=[ "res://.import/Comp 1_00026.png-7d0237d95ab2f505d03a79d37a11abea.s3tc.stex", "res://.import/Comp 1_00026.png-7d0237d95ab2f505d03a79d37a11abea.etc2.stex" ]
+dest_files=[ "res://.import/Comp 1_00026.png-7d0237d95ab2f505d03a79d37a11abea.s3tc.stex", "res://.import/Comp 1_00026.png-7d0237d95ab2f505d03a79d37a11abea.etc2.stex", "res://.import/Comp 1_00026.png-7d0237d95ab2f505d03a79d37a11abea.etc.stex" ]
 
 [params]
 

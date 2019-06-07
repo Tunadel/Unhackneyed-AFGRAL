@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/Comp 1_00005.png-f9cd5d573faf7b3508497a1e740a3f8e.s3tc.stex"
 path.etc2="res://.import/Comp 1_00005.png-f9cd5d573faf7b3508497a1e740a3f8e.etc2.stex"
+path.etc="res://.import/Comp 1_00005.png-f9cd5d573faf7b3508497a1e740a3f8e.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Textures/lightning/Comp 1_00005.png"
-dest_files=[ "res://.import/Comp 1_00005.png-f9cd5d573faf7b3508497a1e740a3f8e.s3tc.stex", "res://.import/Comp 1_00005.png-f9cd5d573faf7b3508497a1e740a3f8e.etc2.stex" ]
+dest_files=[ "res://.import/Comp 1_00005.png-f9cd5d573faf7b3508497a1e740a3f8e.s3tc.stex", "res://.import/Comp 1_00005.png-f9cd5d573faf7b3508497a1e740a3f8e.etc2.stex", "res://.import/Comp 1_00005.png-f9cd5d573faf7b3508497a1e740a3f8e.etc.stex" ]
 
 [params]
 

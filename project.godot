@@ -17,7 +17,10 @@ _global_script_class_icons={
 
 config/name="Unhackneyed"
 run/main_scene="res://Ui/Main_menu.tscn"
-config/icon="res://icon.png"
+boot_splash/image="res://Ui/boat.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 0.286275, 0.411765, 0.439216, 1 )
+config/icon="res://Ui/boat.png"
 
 [display]
 
@@ -40,4 +43,5 @@ ui_pause={
 [rendering]
 
 quality/driver/fallback_to_gles2=true
+vram_compression/import_etc=true
 environment/default_environment="res://default_env.tres"

@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/Comp 1_00028.png-21eaa5f0a8381a3471b6f3051a2cf46e.s3tc.stex"
 path.etc2="res://.import/Comp 1_00028.png-21eaa5f0a8381a3471b6f3051a2cf46e.etc2.stex"
+path.etc="res://.import/Comp 1_00028.png-21eaa5f0a8381a3471b6f3051a2cf46e.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Textures/noise/Comp 1_00028.png"
-dest_files=[ "res://.import/Comp 1_00028.png-21eaa5f0a8381a3471b6f3051a2cf46e.s3tc.stex", "res://.import/Comp 1_00028.png-21eaa5f0a8381a3471b6f3051a2cf46e.etc2.stex" ]
+dest_files=[ "res://.import/Comp 1_00028.png-21eaa5f0a8381a3471b6f3051a2cf46e.s3tc.stex", "res://.import/Comp 1_00028.png-21eaa5f0a8381a3471b6f3051a2cf46e.etc2.stex", "res://.import/Comp 1_00028.png-21eaa5f0a8381a3471b6f3051a2cf46e.etc.stex" ]
 
 [params]
 

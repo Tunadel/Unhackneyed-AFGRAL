@@ -652,6 +652,8 @@ material = SubResource( 38 )
 
 [node name="Boat" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, -8.74228e-008, 0, 8.74228e-008, 1, 0, 0, 0 )
+collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
@@ -855,3 +857,5 @@ align = 1
 valign = 1
 
 [connection signal="button_down" from="Spatial/pause/Button" to="Spatial/pause" method="_on_Button_button_down"]
+[connection signal="mouse_entered" from="Spatial/pause/Button" to="Spatial/pause/Button" method="_on_Button_mouse_entered"]
+[connection signal="mouse_exited" from="Spatial/pause/Button" to="Spatial/pause/Button" method="_on_Button_mouse_exited"]
