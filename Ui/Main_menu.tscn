@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/Textures/waterfundo.png" type="Texture" id=1]
 [ext_resource path="res://Ui/boat.png" type="Texture" id=2]
@@ -260,15 +260,56 @@ tracks/15/loop_wrap = true
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/keys = {
-"times": PoolRealArray( 10.9, 12 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 10.9, 12 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+"values": [ Color( 0, 0, 0, 0.999999 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
 [sub_resource type="DynamicFont" id=8]
 size = 22
 font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=9]
+resource_name = "scroll"
+length = 20.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect2:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1024, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1024, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TextureRect:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.5, 6.7, 13.4, 16.6, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -1.9865, 5.40978, -1.9865, 5.40978, 0.0 ]
+}
 
 [node name="Control" type="Control"]
 pause_mode = 2
@@ -280,6 +321,13 @@ material = SubResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = SubResource( 4 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1024.0
+margin_right = 1024.0
+
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -289,6 +337,7 @@ margin_left = -270.0
 margin_top = -270.0
 margin_right = 272.0
 margin_bottom = 272.0
+rect_pivot_offset = Vector2( 261.431, 246.921 )
 texture = ExtResource( 2 )
 
 [node name="mouse" parent="." instance=ExtResource( 3 )]
@@ -350,14 +399,13 @@ anims/start = SubResource( 7 )
 script = ExtResource( 11 )
 
 [node name="fundo" type="ColorRect" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.999999 )
 
 [node name="Label2" type="Label" parent="fundo"]
 visible = false
-modulate = Color( 1, 1, 1, 0.181818 )
+modulate = Color( 1, 1, 1, 0.0909091 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -373,7 +421,7 @@ align = 1
 
 [node name="Label" type="Label" parent="fundo"]
 visible = false
-modulate = Color( 0.255615, 0.255615, 0.255615, 0.181818 )
+modulate = Color( 0.0901961, 0.0901961, 0.0901961, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -399,7 +447,7 @@ margin_bottom = 94.0
 
 [node name="Label3" type="Label" parent="fundo/Control"]
 visible = false
-modulate = Color( 1, 1, 1, 0.222223 )
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -219.0
@@ -465,6 +513,10 @@ margin_right = 219.0
 custom_fonts/font = SubResource( 8 )
 text = "Scowsh"
 align = 1
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+autoplay = "scroll"
+anims/scroll = SubResource( 9 )
 
 [connection signal="button_down" from="Control/Play" to="Control/Play" method="_on_Button_button_down"]
 [connection signal="mouse_entered" from="Control/Play" to="Control/Play" method="_on_Play_mouse_entered"]

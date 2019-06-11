@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=2]
 
 [sub_resource type="Environment" id=1]
-ambient_light_color = Color( 0.658823, 0.67451, 0.729412, 1 )
+ambient_light_color = Color( 1, 1, 1, 1 )
 ambient_light_energy = 0.4
 
 [sub_resource type="Animation" id=2]
 length = 240.0
 loop = true
-step = 60.0
+step = 1.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("OmniLight:rotation_degrees")
 tracks/0/interp = 1
@@ -42,7 +42,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 120, 240 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 2.0, 0.41, 2.0 ]
+"values": [ 1.5, 0.41, 1.5 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("WorldEnvironment:environment:ambient_light_energy")
@@ -241,9 +241,8 @@ tracks/5/keys = {
 environment = SubResource( 1 )
 
 [node name="OmniLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.0753355, 0.0594306, -0.995385, -0.674124, 0.732516, 0.0947564, 0.734767, 0.678151, -0.0151209, -5.28402, 6.85008, 22.8644 )
-light_color = Color( 0.672549, 0.709804, 0.756863, 1 )
-light_energy = 1.205
+transform = Transform( 0.714514, -0.573328, -0.400956, 0.699622, 0.585531, 0.409491, -4.17233e-007, -0.573105, 0.819481, -5.28402, 6.85008, 22.8644 )
+light_energy = 1.5
 shadow_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

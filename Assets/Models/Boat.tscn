@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Assets/Materials/boat_shader.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Materials/blue_shader.tres" type="Material" id=2]
@@ -650,6 +650,13 @@ flags_disable_ambient_light = true
 [sub_resource type="QuadMesh" id=39]
 material = SubResource( 38 )
 
+[sub_resource type="DynamicFontData" id=40]
+font_path = "res://Ui/ShortStack-Regular.otf"
+
+[sub_resource type="DynamicFont" id=41]
+size = 30
+font_data = SubResource( 40 )
+
 [node name="Boat" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, -8.74228e-008, 0, 8.74228e-008, 1, 0, 0, 0 )
 collision_layer = 5
@@ -661,7 +668,7 @@ shape = SubResource( 1 )
 [node name="camera" type="Spatial" parent="."]
 
 [node name="Camera" type="Camera" parent="camera"]
-transform = Transform( -4.37114e-008, 0.766044, -0.642788, 0, 0.642788, 0.766044, 1, 3.34849e-008, -2.80972e-008, -19.5369, 22.9088, -1.39078e-006 )
+transform = Transform( -4.37114e-008, 0.766044, -0.642788, 0, 0.642788, 0.766044, 1, 3.34849e-008, -2.80972e-008, -25.562, 26.5766, -1.71143e-006 )
 projection = 1
 current = true
 size = 12.4939
@@ -836,10 +843,11 @@ texture = ExtResource( 15 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Passagenrs" type="Label" parent="CanvasLayer"]
-margin_left = 918.168
-margin_top = 18.1791
-margin_right = 971.168
-margin_bottom = 49.1791
+margin_left = 794.363
+margin_top = 14.3102
+margin_right = 1006.36
+margin_bottom = 134.31
+custom_fonts/font = SubResource( 41 )
 text = "passangers:
 
 "
@@ -848,11 +856,12 @@ valign = 1
 script = ExtResource( 16 )
 
 [node name="Number" type="Label" parent="CanvasLayer/Passagenrs"]
-margin_left = 11.0
-margin_top = 19.8768
-margin_right = 64.0
-margin_bottom = 50.8768
-text = "150"
+margin_left = 79.0926
+margin_top = 39.9951
+margin_right = 132.093
+margin_bottom = 77.9951
+custom_fonts/font = SubResource( 41 )
+text = "50"
 align = 1
 valign = 1
 

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://exports card/ui-06.png" type="Texture" id=1]
+[ext_resource path="res://exports card/ui-05.png" type="Texture" id=2]
+
+[node name="Language" type="TextureButton"]
+margin_left = 894.433
+margin_top = 100.899
+margin_right = 1041.43
+margin_bottom = 206.899
+toggle_mode = true
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+
