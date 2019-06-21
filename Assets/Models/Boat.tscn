@@ -1,21 +1,24 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=61 format=2]
 
-[ext_resource path="res://Assets/Materials/boat_shader.tres" type="Material" id=1]
-[ext_resource path="res://Assets/Materials/blue_shader.tres" type="Material" id=2]
-[ext_resource path="res://Assets/particles/Smoke.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Textures/bubbles/bubbles.tres" type="Texture" id=4]
-[ext_resource path="res://Assets/Models/Camera Movment.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Models/Mouse Follow.gd" type="Script" id=6]
-[ext_resource path="res://Assets/Models/Power.gd" type="Script" id=7]
-[ext_resource path="res://systems/colision_detection3.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Ui/Event_Select.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Models/Puase.gd" type="Script" id=10]
-[ext_resource path="res://exports card/ui-03.png" type="Texture" id=11]
-[ext_resource path="res://Ui/Volume.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Ui/Back to Main Menu.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Ui/mouse/mouse.tscn" type="PackedScene" id=14]
-[ext_resource path="res://exports card/ui-08.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Models/Passagenrs.gd" type="Script" id=16]
+[ext_resource path="res://Assets/Models/Boat.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Materials/boat_shader.tres" type="Material" id=2]
+[ext_resource path="res://Assets/Materials/blue_shader.tres" type="Material" id=3]
+[ext_resource path="res://Assets/particles/Smoke.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Textures/bubbles/bubbles.tres" type="Texture" id=5]
+[ext_resource path="res://Assets/Models/Camera Movment.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Models/Mouse Follow.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Models/Power.gd" type="Script" id=8]
+[ext_resource path="res://systems/colision_detection3.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Ui/Event_Select.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Models/Puase.gd" type="Script" id=11]
+[ext_resource path="res://exports card/ui-03.png" type="Texture" id=12]
+[ext_resource path="res://Ui/Volume.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Ui/Back to Main Menu.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Ui/mouse/mouse.tscn" type="PackedScene" id=15]
+[ext_resource path="res://exports card/ui-08.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Models/Passagenrs.gd" type="Script" id=17]
+[ext_resource path="res://Ui/compass/compass.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Models/arrow.gd" type="Script" id=19]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1, 1.92066 )
@@ -561,7 +564,7 @@ input_name = "uv"
 
 [sub_resource type="VisualShaderNodeTexture" id=31]
 output_port_for_preview = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [sub_resource type="VisualShaderNodeVectorOp" id=32]
 default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 0.6, 0.6, 0.6 ) ]
@@ -661,6 +664,8 @@ font_data = SubResource( 40 )
 transform = Transform( 1, 0, 0, 0, 1, -8.74228e-008, 0, 8.74228e-008, 1, 0, 0, 0 )
 collision_layer = 5
 collision_mask = 5
+script = ExtResource( 1 )
+objectve = Vector3( -6.016, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
@@ -668,7 +673,7 @@ shape = SubResource( 1 )
 [node name="camera" type="Spatial" parent="."]
 
 [node name="Camera" type="Camera" parent="camera"]
-transform = Transform( -4.37114e-008, 0.766044, -0.642788, 0, 0.642788, 0.766044, 1, 3.34849e-008, -2.80972e-008, -25.562, 26.5766, -1.71143e-006 )
+transform = Transform( -4.37114e-008, 0.766044, -0.642788, 0, 0.642788, 0.766044, 1, 3.34849e-008, -2.80972e-008, -23.5125, 28.2963, -1.62184e-006 )
 projection = 1
 current = true
 size = 12.4939
@@ -680,12 +685,12 @@ transform = Transform( 1, 8.74228e-008, 0, -8.74228e-008, 1, 0, 0, 0, 1, 0, 0, 0
 [node name="Cube" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1.10975, 0, 0, 0, 1.23436, 0, 0, 0, 1.23436, 0, 0, 0 )
 mesh = SubResource( 4 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
 
 [node name="Cube001" type="MeshInstance" parent="Spatial"]
 transform = Transform( 0.444867, 0, 0, 0, 0.444867, 0, 0, 0, 0.444867, 0, -0.00662557, 0.448626 )
 mesh = SubResource( 7 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
 
 [node name="Cube002" type="MeshInstance" parent="Spatial"]
 transform = Transform( 0.210522, 0, 0, 0, 0.210522, 0, 0, 0, 0.210522, -0.442079, -0.262273, -1.50771 )
@@ -700,12 +705,12 @@ material/0 = null
 [node name="Cube004" type="MeshInstance" parent="Spatial"]
 transform = Transform( 0.0292181, 0, 0, 0, 0.157228, 0, 0, 0, 0.0292181, 0.305105, 1.2171, 0.299346 )
 mesh = SubResource( 14 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
 
 [node name="Cube006" type="MeshInstance" parent="Spatial"]
 transform = Transform( 0.0292181, 0, 0, 0, 0.157228, 0, 0, 0, 0.0292181, 0.00871346, 0.157753, -2.4983 )
 mesh = SubResource( 15 )
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 2 )
 
 [node name="Cube009" type="MeshInstance" parent="Spatial"]
 transform = Transform( 1.58939e-008, 0, 0.210522, 0, 0.210522, 0, -0.210522, 0, 1.58939e-008, 0.557115, -0.262273, -1.10245 )
@@ -725,7 +730,7 @@ material/0 = null
 [node name="Cube012" type="MeshInstance" parent="Spatial"]
 transform = Transform( 0.150852, 0, 0, 0, 0.121362, -0.0895975, 0, 0.0895975, 0.121362, -0.0543105, -1.05198, 1.57111 )
 mesh = SubResource( 23 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
 
 [node name="Torus" type="MeshInstance" parent="Spatial"]
 transform = Transform( -0.0180878, -0.206745, 0, 0.206745, -0.0180878, 0, 0, 0, 0.207535, 1.11546, -0.394656, -0.829867 )
@@ -737,7 +742,7 @@ transform = Transform( -0.0180878, -0.206745, 0, 0.206745, -0.0180878, 0, 0, 0, 
 mesh = SubResource( 29 )
 material/0 = null
 
-[node name="Smoke" parent="Spatial" instance=ExtResource( 3 )]
+[node name="Smoke" parent="Spatial" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30898, 1.3659, 0.300463 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Spatial"]
@@ -747,21 +752,21 @@ mesh = SubResource( 37 )
 [node name="Camera Movment" type="Node2D" parent="Spatial"]
 editor/display_folded = true
 position = Vector2( 512, 300 )
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="Spatial/Camera Movment"]
 current = true
 
 [node name="Mouse Follow" type="Node2D" parent="Spatial"]
 position = Vector2( 512, 300 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 speed_forward = 0.6
 desaleration = 0.95
 
 [node name="Power" type="CSGMesh" parent="Spatial"]
 transform = Transform( 0, -1, -6.6815e-022, 0, 6.6815e-022, 1, -1, 0, 0, 0, -0.5, 0.503 )
 mesh = SubResource( 39 )
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [node name="Power2" type="Polygon2D" parent="Spatial"]
 visible = false
@@ -772,36 +777,36 @@ polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [node name="Spatial" type="Spatial" parent="Spatial"]
 transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, 4.67705e-022, -0.7, 0 )
 
-[node name="colision_detection0" parent="Spatial/Spatial" instance=ExtResource( 8 )]
+[node name="colision_detection0" parent="Spatial/Spatial" instance=ExtResource( 9 )]
 transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, 0, 0, 0 )
 enabled = true
 cast_to = Vector3( 0, 0, -3 )
 collision_mask = 2
 
-[node name="colision_detection1" parent="Spatial/Spatial" instance=ExtResource( 8 )]
+[node name="colision_detection1" parent="Spatial/Spatial" instance=ExtResource( 9 )]
 transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, 0, 0, 0 )
 enabled = true
 cast_to = Vector3( -2, 0, 0 )
 collision_mask = 2
 
-[node name="colision_detection2" parent="Spatial/Spatial" instance=ExtResource( 8 )]
+[node name="colision_detection2" parent="Spatial/Spatial" instance=ExtResource( 9 )]
 transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, 0, 0, 0 )
 enabled = true
 cast_to = Vector3( 2, 0, 0 )
 collision_mask = 2
 
-[node name="colision_detection3" parent="Spatial/Spatial" instance=ExtResource( 8 )]
+[node name="colision_detection3" parent="Spatial/Spatial" instance=ExtResource( 9 )]
 transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, 0, 0, 0 )
 enabled = true
 cast_to = Vector3( 0, 0, 3 )
 collision_mask = 2
 
-[node name="Control" parent="Spatial" instance=ExtResource( 9 )]
+[node name="Control" parent="Spatial" instance=ExtResource( 10 )]
 pause_mode = 2
 
 [node name="pause" type="Control" parent="Spatial"]
 pause_mode = 2
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="dark" type="Polygon2D" parent="Spatial/pause"]
 position = Vector2( -1.48969, 0 )
@@ -814,16 +819,16 @@ margin_top = 208.0
 margin_right = 581.0
 margin_bottom = 267.0
 rect_pivot_offset = Vector2( 46, 23 )
-texture_normal = ExtResource( 11 )
+texture_normal = ExtResource( 12 )
 expand = true
 
-[node name="Volume" parent="Spatial/pause" instance=ExtResource( 12 )]
+[node name="Volume" parent="Spatial/pause" instance=ExtResource( 13 )]
 margin_left = 409.732
 margin_top = 294.203
 margin_right = 623.732
 margin_bottom = 319.203
 
-[node name="Back to Main Menu" parent="Spatial/pause" instance=ExtResource( 13 )]
+[node name="Back to Main Menu" parent="Spatial/pause" instance=ExtResource( 14 )]
 margin_left = 423.0
 margin_top = 331.0
 margin_right = 596.0
@@ -832,13 +837,13 @@ expand = true
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Spatial"]
 
-[node name="mouse" parent="Spatial" instance=ExtResource( 14 )]
+[node name="mouse" parent="Spatial" instance=ExtResource( 15 )]
 
 [node name="medikit" type="Sprite" parent="Spatial"]
 visible = false
 position = Vector2( 823.099, 49.4979 )
 scale = Vector2( 0.400321, 0.400321 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -853,7 +858,7 @@ text = "passangers:
 "
 align = 1
 valign = 1
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 
 [node name="Number" type="Label" parent="CanvasLayer/Passagenrs"]
 margin_left = 79.0926
@@ -861,9 +866,28 @@ margin_top = 39.9951
 margin_right = 132.093
 margin_bottom = 77.9951
 custom_fonts/font = SubResource( 41 )
-text = "50"
+text = "100"
 align = 1
 valign = 1
+
+[node name="compass" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 98.1682, 534.316 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 18 )
+region_enabled = true
+region_rect = Rect2( 27, 165, 198, 72 )
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer/compass"]
+position = Vector2( 0.809174, -16.1018 )
+scale = Vector2( 2, 0.4 )
+
+[node name="arrow" type="Sprite" parent="CanvasLayer/compass/Node2D"]
+position = Vector2( 0.370224, 1.01978 )
+texture = ExtResource( 18 )
+offset = Vector2( -0.355659, -17.8569 )
+region_enabled = true
+region_rect = Rect2( 104, 53, 42, 42 )
+script = ExtResource( 19 )
 
 [connection signal="button_down" from="Spatial/pause/Button" to="Spatial/pause" method="_on_Button_button_down"]
 [connection signal="mouse_entered" from="Spatial/pause/Button" to="Spatial/pause/Button" method="_on_Button_mouse_entered"]

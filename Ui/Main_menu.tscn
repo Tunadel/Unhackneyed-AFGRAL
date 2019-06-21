@@ -305,10 +305,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 3.5, 6.7, 13.4, 16.6, 20 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 4.9, 15, 20 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, -1.9865, 5.40978, -1.9865, 5.40978, 0.0 ]
+"values": [ 0.0, 1.05829, -1.9865, 0.0 ]
 }
 
 [node name="Control" type="Control"]
@@ -320,13 +320,15 @@ anchor_bottom = 1.0
 material = SubResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -951.338
+margin_right = -951.338
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 material = SubResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1024.0
-margin_right = 1024.0
+margin_left = 72.6625
+margin_right = 72.6624
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_left = 0.5
@@ -337,6 +339,7 @@ margin_left = -270.0
 margin_top = -270.0
 margin_right = 272.0
 margin_bottom = 272.0
+rect_rotation = -0.563844
 rect_pivot_offset = Vector2( 261.431, 246.921 )
 texture = ExtResource( 2 )
 
@@ -399,13 +402,13 @@ anims/start = SubResource( 7 )
 script = ExtResource( 11 )
 
 [node name="fundo" type="ColorRect" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.999999 )
+color = Color( 0, 0, 0, 0 )
 
 [node name="Label2" type="Label" parent="fundo"]
-visible = false
-modulate = Color( 1, 1, 1, 0.0909091 )
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -420,8 +423,7 @@ text = "Created For:
 align = 1
 
 [node name="Label" type="Label" parent="fundo"]
-visible = false
-modulate = Color( 0.0901961, 0.0901961, 0.0901961, 0 )
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
