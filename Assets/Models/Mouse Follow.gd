@@ -28,7 +28,7 @@ func _process(delta):
 #		if Input.is_action_just_pressed("ui_left_mouse"):
 #			Input. warp_mouse_position(Vector2(OS.get_window_size().x/2,OS.get_window_size().y/2))
 	
-	if Input.is_action_just_released("ui_left_mouse"):
+	if Input.is_action_just_released("ui_right_mouse"):
 		if event:
 			motion += speed_forward
 			state = 1
