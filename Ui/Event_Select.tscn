@@ -272,6 +272,10 @@ custom_fonts/font = ExtResource( 5 )
 autowrap = true
 
 [node name="Language" parent="." instance=ExtResource( 8 )]
+margin_left = 905.65
+margin_top = 142.454
+margin_right = 1052.65
+margin_bottom = 248.454
 
 [connection signal="button_down" from="Control/Card/Button" to="." method="_on_Button_button_down"]
 [connection signal="mouse_entered" from="Control/Card/Button" to="Control/Card/Button" method="_on_Button_mouse_entered"]

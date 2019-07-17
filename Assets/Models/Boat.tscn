@@ -849,13 +849,12 @@ scale = Vector2( 0.400321, 0.400321 )
 texture = ExtResource( 16 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="Passagenrs" type="Label" parent="CanvasLayer"]
-margin_left = 794.363
-margin_top = 14.3102
-margin_right = 1006.36
-margin_bottom = 134.31
+margin_left = 803.614
+margin_top = 72.2507
+margin_right = 1015.61
+margin_bottom = 192.251
 custom_fonts/font = SubResource( 41 )
 text = "passangers:
 
@@ -875,7 +874,7 @@ align = 1
 valign = 1
 
 [node name="compass" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 98.1682, 534.316 )
+position = Vector2( 96.3632, 584.856 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 18 )
 region_enabled = true
