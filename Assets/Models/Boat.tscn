@@ -681,7 +681,6 @@ size = 12.4939
 far = 50.0
 
 [node name="Spatial" type="Spatial" parent="."]
-editor/display_folded = true
 transform = Transform( 1, 8.74228e-008, 0, -8.74228e-008, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Cube" type="MeshInstance" parent="Spatial"]
