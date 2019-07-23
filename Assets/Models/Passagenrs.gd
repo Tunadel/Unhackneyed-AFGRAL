@@ -1,6 +1,6 @@
 extends Label
 
-var number
+var number = 100
 
 func _process(delta):
 	number = int(.get_node("Number").get_text())
