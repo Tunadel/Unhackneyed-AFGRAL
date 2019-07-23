@@ -758,7 +758,13 @@ script = ExtResource( 6 )
 [node name="Camera2D" type="Camera2D" parent="Spatial/Camera Movment"]
 current = true
 
+[node name="Timer" type="Timer" parent="Spatial"]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
 [node name="Mouse Follow" type="Node2D" parent="Spatial"]
+pause_mode = 2
 position = Vector2( 512, 300 )
 script = ExtResource( 7 )
 speed_forward = 0.6
@@ -897,6 +903,7 @@ stream = ExtResource( 20 )
 volume_db = -30.0
 autoplay = true
 
+[connection signal="timeout" from="Spatial/Timer" to="Spatial/Mouse Follow" method="_on_Timer_timeout"]
 [connection signal="button_down" from="Spatial/pause/Button" to="Spatial/pause" method="_on_Button_button_down"]
 [connection signal="mouse_entered" from="Spatial/pause/Button" to="Spatial/pause/Button" method="_on_Button_mouse_entered"]
 [connection signal="mouse_exited" from="Spatial/pause/Button" to="Spatial/pause/Button" method="_on_Button_mouse_exited"]

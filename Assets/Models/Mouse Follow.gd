@@ -9,6 +9,9 @@ var vizualization_show = 0.0
 var water_level = 1.05
 var event = true
 
+func _ready():
+	set_process(false)
+
 func _process(delta):
 	if motion > 0:
 		vizualization_show = motion * 0.5
@@ -39,3 +42,7 @@ func _process(delta):
 		
 	if get_parent().get_parent().get_translation().y > water_level or get_parent().get_parent().get_translation().y < water_level:
 		get_parent().get_parent().set_translation(Vector3(get_parent().get_parent().get_translation().x,water_level,get_parent().get_parent().get_translation().z))
+
+func _on_Timer_timeout():
+	set_process(true)
+	pass # Replace with function body.

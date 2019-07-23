@@ -18,6 +18,8 @@ func _ready():
 	load_Stats()
 
 func event(var i):
+	get_parent().get_node("Mouse Follow").set_process(false)
+	get_parent().get_node("Timer").start()
 	get_node("Control").show()
 	get_node("Consequence").hide()
 	self.show()
