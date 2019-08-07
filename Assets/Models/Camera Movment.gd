@@ -17,7 +17,6 @@ func _process(delta):
 		motio = 0
 	if motio > deadzone2:
 		motio = 1
-	print(motio)
 	#	if Input.is_action_pressed("ui_left_mouse"):
 	if (get_position().distance_to(get_global_mouse_position())) > deadzone:
 		camera = get_parent().get_parent().get_node("camera").get_path()

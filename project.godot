@@ -53,4 +53,5 @@ pointing/emulate_touch_from_mouse=true
 
 quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
+quality/filters/msaa=2
 environment/default_environment="res://default_env.tres"

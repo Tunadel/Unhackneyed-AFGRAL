@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Ui/Event_Select.gd" type="Script" id=1]
 [ext_resource path="res://Ui/Languages.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Ui/Button.gd" type="Script" id=6]
 [ext_resource path="res://exports card/ui-02.png" type="Texture" id=7]
 [ext_resource path="res://Ui/Language.tscn" type="PackedScene" id=8]
+[ext_resource path="res://exports card/ui-06.png" type="Texture" id=9]
+[ext_resource path="res://exports card/ui-05.png" type="Texture" id=10]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -272,10 +274,32 @@ custom_fonts/font = ExtResource( 5 )
 autowrap = true
 
 [node name="Language" parent="." instance=ExtResource( 8 )]
-margin_left = 905.65
-margin_top = 142.454
-margin_right = 1052.65
-margin_bottom = 248.454
+margin_left = 922.919
+margin_top = 154.621
+margin_right = 1037.92
+margin_bottom = 260.621
+rect_scale = Vector2( 0.7, 0.7 )
+toggle_mode = false
+texture_pressed = ExtResource( 9 )
+
+[node name="Language2" parent="." instance=ExtResource( 8 )]
+margin_left = 821.075
+margin_top = 153.621
+margin_right = 936.075
+margin_bottom = 259.621
+rect_scale = Vector2( 0.7, 0.7 )
+toggle_mode = false
+texture_normal = ExtResource( 10 )
+
+[node name="Language3" parent="." instance=ExtResource( 8 )]
+margin_left = 722.919
+margin_top = 155.621
+margin_right = 821.919
+margin_bottom = 261.621
+rect_scale = Vector2( 0.7, 0.7 )
+toggle_mode = false
+texture_normal = null
+texture_pressed = null
 
 [connection signal="button_down" from="Control/Card/Button" to="." method="_on_Button_button_down"]
 [connection signal="mouse_entered" from="Control/Card/Button" to="Control/Card/Button" method="_on_Button_mouse_entered"]
@@ -290,3 +314,5 @@ margin_bottom = 248.454
 [connection signal="mouse_entered" from="Consequence/Card/Button" to="Consequence/Card/Button" method="_on_Button_mouse_entered"]
 [connection signal="mouse_exited" from="Consequence/Card/Button" to="Consequence/Card/Button" method="_on_Button_mouse_exited"]
 [connection signal="button_down" from="Language" to="." method="_on_Language_button_down"]
+[connection signal="button_down" from="Language2" to="." method="_on_Language2_button_down"]
+[connection signal="button_down" from="Language3" to="." method="_on_Language3_button_down"]

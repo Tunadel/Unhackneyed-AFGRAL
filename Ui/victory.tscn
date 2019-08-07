@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Ui/victory.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -6,11 +6,12 @@
 [ext_resource path="res://Ui/mouse/mouse.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Ui/Language.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Ui/Languages.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Mesh-Library/objects.tres" type="MeshLibrary" id=7]
-[ext_resource path="res://Assets/Mesh-Library/tiles.tres" type="MeshLibrary" id=8]
-[ext_resource path="res://lighting/Luz.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scene Root 3D.tscn" type="PackedScene" id=10]
-[ext_resource path="res://sound/sfx-ogg/Calm_Waters.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Assets/sprite/Sprite3D1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Mesh-Library/objects.tres" type="MeshLibrary" id=8]
+[ext_resource path="res://Assets/Mesh-Library/tiles.tres" type="MeshLibrary" id=9]
+[ext_resource path="res://lighting/Luz.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scene Root 3D.tscn" type="PackedScene" id=11]
+[ext_resource path="res://sound/sfx-ogg/Calm_Waters.ogg" type="AudioStream" id=12]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -97,12 +98,65 @@ margin_bottom = 140.989
 
 [node name="Control" type="Spatial" parent="."]
 
+[node name="Spatial" type="Spatial" parent="Control"]
+editor/display_folded = true
+
+[node name="Sprite3D1" parent="Control/Spatial" instance=ExtResource( 7 )]
+transform = Transform( -2.18557e-008, 0.17101, 0.469846, 0, 0.469846, -0.17101, -0.5, -7.47509e-009, -2.05376e-008, 4.84301, 0.779521, 4.72431 )
+alpha_cut = 2
+script = null
+
+[node name="Sprite3D4" parent="Control/Spatial" instance=ExtResource( 7 )]
+transform = Transform( -2.18557e-008, 0.17101, 0.469846, 0, 0.469846, -0.17101, -0.5, -7.47509e-009, -2.05376e-008, 4.84301, 0.779521, 6.20116 )
+alpha_cut = 2
+script = null
+
+[node name="Sprite3D7" parent="Control/Spatial" instance=ExtResource( 7 )]
+transform = Transform( -2.18557e-008, 0.17101, 0.469846, 0, 0.469846, -0.17101, -0.5, -7.47509e-009, -2.05376e-008, 5.05484, 1.23405, 8.54855 )
+alpha_cut = 2
+script = null
+
+[node name="Sprite3D2" parent="Control/Spatial" instance=ExtResource( 7 )]
+transform = Transform( -2.18557e-008, 0.17101, 0.469846, 0, 0.469846, -0.17101, -0.5, -7.47509e-009, -2.05376e-008, 5.21144, 0.797024, 5.49738 )
+alpha_cut = 2
+script = null
+
+[node name="Sprite3D5" parent="Control/Spatial" instance=ExtResource( 7 )]
+transform = Transform( -2.18557e-008, 0.17101, 0.469846, 0, 0.469846, -0.17101, -0.5, -7.47509e-009, -2.05376e-008, 4.61933, 0.739305, 6.98506 )
+alpha_cut = 2
+script = null
+
+[node name="Sprite3D10" parent="Control/Spatial" instance=ExtResource( 7 )]
+transform = Transform( -2.18557e-008, 0.17101, 0.469846, 0, 0.469846, -0.17101, -0.5, -7.47509e-009, -2.05376e-008, 8.35195, 1.16492, 7.13307 )
+alpha_cut = 2
+script = null
+
+[node name="Sprite3D8" parent="Control/Spatial" instance=ExtResource( 7 )]
+transform = Transform( -2.18557e-008, 0.17101, 0.469846, 0, 0.469846, -0.17101, -0.5, -7.47509e-009, -2.05376e-008, 5.05484, 1.23405, 9.33718 )
+alpha_cut = 2
+script = null
+
+[node name="Sprite3D3" parent="Control/Spatial" instance=ExtResource( 7 )]
+transform = Transform( -2.18557e-008, 0.17101, 0.469846, 0, 0.469846, -0.17101, -0.5, -7.47509e-009, -2.05376e-008, 6.50874, 1.26771, 6.77548 )
+alpha_cut = 2
+script = null
+
+[node name="Sprite3D6" parent="Control/Spatial" instance=ExtResource( 7 )]
+transform = Transform( -2.18557e-008, 0.17101, 0.469846, 0, 0.469846, -0.17101, -0.5, -7.47509e-009, -2.05376e-008, 6.99795, 1.26771, 8.22052 )
+alpha_cut = 2
+script = null
+
+[node name="Sprite3D9" parent="Control/Spatial" instance=ExtResource( 7 )]
+transform = Transform( -2.18557e-008, 0.17101, 0.469846, 0, 0.469846, -0.17101, -0.5, -7.47509e-009, -2.05376e-008, 6.52518, 1.18209, 10.2812 )
+alpha_cut = 2
+script = null
+
 [node name="GridMap2" type="GridMap" parent="Control"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
-mesh_library = ExtResource( 7 )
+mesh_library = ExtResource( 8 )
 cell_size = Vector3( 0.5, 0.4, 0.5 )
 data = {
-"cells": PoolIntArray( 131083, 2, 536870914, 131085, 4, 536870917, 131087, 8, 5, 131088, 11, 2, 7, 18, 655361, 65545, 25, 5, 65542, 26, 1, 65543, 29, 5 )
+"cells": PoolIntArray( 131083, 2, 1073741826, 131085, 4, 1073741829, 131087, 8, 5, 131088, 11, 2, 7, 18, 655361, 65545, 25, 5, 65542, 26, 1073741825, 65543, 29, 5 )
 }
 __meta__ = {
 "_editor_clip_": 0,
@@ -110,36 +164,36 @@ __meta__ = {
 }
 
 [node name="GridMap" type="GridMap" parent="Control"]
-mesh_library = ExtResource( 8 )
+mesh_library = ExtResource( 9 )
 cell_size = Vector3( 0.865, 0.4, 0.75 )
 data = {
-"cells": PoolIntArray( 1, 1, 536870916, 65527, 1, 536870916, 65529, 1, 4, 65531, 1, 4, 65533, 1, 4, 65535, 1, 4, 65539, 1, 1, 65541, 1, 1, 65543, 1, 536870912, 65545, 1, 536870912, 65547, 1, 536870912, 0, 3, 536870916, 2, 3, 4, 4, 3, 536870913, 65528, 3, 536870916, 65530, 3, 536870916, 65532, 3, 536870916, 65534, 3, 536870916, 65542, 3, 536870913, 65544, 3, 536870912, 65546, 3, 536870912, 1, 5, 536870916, 3, 5, 536870916, 5, 5, 536870913, 65527, 5, 536870916, 65529, 5, 536870916, 65531, 5, 536870916, 65533, 5, 536870916, 65535, 5, 536870916, 65543, 5, 536870913, 65545, 5, 536870912, 65547, 5, 536870912, 0, 7, 536870916, 2, 7, 536870916, 4, 7, 536870913, 6, 7, 536870913, 65528, 7, 536870916, 65530, 7, 536870916, 65532, 7, 536870916, 65534, 7, 536870916, 65544, 7, 536870913, 65546, 7, 536870912, 1, 9, 536870916, 3, 9, 536870916, 5, 9, 536870913, 65527, 9, 536870916, 65529, 9, 536870916, 65531, 9, 536870916, 65533, 9, 536870916, 65535, 9, 536870916, 65543, 9, 536870913, 65545, 9, 1, 65547, 9, 536870912, 0, 11, 536870916, 2, 11, 536870916, 4, 11, 536870913, 65528, 11, 536870916, 65530, 11, 536870916, 65532, 11, 536870916, 65534, 11, 4, 65542, 11, 536870913, 65544, 11, 536870913, 65546, 11, 536870912, 1, 13, 536870916, 3, 13, 536870913, 65527, 13, 536870916, 65529, 13, 536870916, 65531, 13, 536870916, 65533, 13, 536870916, 65535, 13, 4, 65541, 13, 536870913, 65543, 13, 536870913, 65545, 13, 536870912, 65547, 13, 536870912, 0, 15, 4, 2, 15, 536870916, 65528, 15, 4, 65530, 15, 4, 65532, 15, 536870916, 65534, 15, 536870916, 65540, 15, 2, 65542, 15, 2, 65544, 15, 0, 65546, 15, 536870912, 1, 17, 4, 65527, 17, 536870916, 65529, 17, 536870916, 65531, 17, 536870916, 65533, 17, 4, 65535, 17, 4, 65539, 17, 0, 65541, 17, 0, 65543, 17, 0, 65545, 17, 0, 65547, 17, 0, 0, 19, 4, 65528, 19, 536870916, 65530, 19, 4, 65532, 19, 4, 65534, 19, 4, 65538, 19, 0, 65540, 19, 0, 65542, 19, 0, 65544, 19, 536870912, 65546, 19, 0, 65527, 21, 4, 65529, 21, 4, 65531, 21, 4, 65533, 21, 4, 65535, 21, 4, 65537, 21, 0, 65539, 21, 0, 65541, 21, 0, 65543, 21, 0, 65545, 21, 0, 65547, 21, 0 )
+"cells": PoolIntArray( 1, 1, 536870916, 65527, 1, 4, 65529, 1, 4, 65531, 1, 4, 65533, 1, 4, 65535, 1, 4, 65539, 1, 536870913, 65541, 1, 536870913, 65543, 1, 536870912, 65545, 1, 0, 65547, 1, 0, 0, 3, 536870916, 2, 3, 4, 4, 3, 536870913, 65528, 3, 4, 65530, 3, 4, 65532, 3, 4, 65534, 3, 4, 65542, 3, 1, 65544, 3, 536870912, 65546, 3, 536870912, 1, 5, 4, 3, 5, 536870916, 5, 5, 1, 65527, 5, 4, 65529, 5, 4, 65531, 5, 4, 65533, 5, 536870916, 65535, 5, 4, 65543, 5, 536870913, 65545, 5, 0, 65547, 5, 0, 0, 7, 536870916, 2, 7, 4, 4, 7, 1, 6, 7, 1, 65528, 7, 4, 65530, 7, 4, 65532, 7, 4, 65534, 7, 4, 65544, 7, 536870913, 65546, 7, 0, 1, 9, 536870916, 3, 9, 4, 5, 9, 1, 65527, 9, 536870916, 65529, 9, 4, 65531, 9, 4, 65533, 9, 4, 65535, 9, 4, 65543, 9, 1, 65545, 9, 1, 65547, 9, 0, 0, 11, 4, 2, 11, 536870916, 4, 11, 536870913, 65528, 11, 4, 65530, 11, 4, 65532, 11, 536870916, 65534, 11, 4, 65542, 11, 1, 65544, 11, 536870913, 65546, 11, 0, 1, 13, 4, 3, 13, 1, 65527, 13, 4, 65529, 13, 4, 65531, 13, 4, 65533, 13, 4, 65535, 13, 4, 65541, 13, 1, 65543, 13, 1, 65545, 13, 0, 65547, 13, 0, 0, 15, 4, 2, 15, 4, 65528, 15, 4, 65530, 15, 4, 65532, 15, 4, 65534, 15, 4, 65540, 15, 2, 65542, 15, 2, 65544, 15, 0, 65546, 15, 0, 1, 17, 4, 65527, 17, 536870916, 65529, 17, 4, 65531, 17, 4, 65533, 17, 4, 65535, 17, 4, 65539, 17, 0, 65541, 17, 0, 65543, 17, 0, 65545, 17, 0, 65547, 17, 0, 0, 19, 4, 65528, 19, 4, 65530, 19, 4, 65532, 19, 4, 65534, 19, 4, 65538, 19, 0, 65540, 19, 536870912, 65542, 19, 0, 65544, 19, 0, 65546, 19, 0, 65527, 21, 4, 65529, 21, 4, 65531, 21, 4, 65533, 21, 4, 65535, 21, 4, 65537, 21, 0, 65539, 21, 0, 65541, 21, 0, 65543, 21, 0, 65545, 21, 0, 65547, 21, 0 )
 }
 __meta__ = {
 "_editor_clip_": 0,
 "_editor_floor_": Vector3( 0, 1, 0 )
 }
 
-[node name="Camera" type="Camera" parent="Control"]
-transform = Transform( 3.41145e-008, 0.642788, -0.766044, -2.86255e-008, 0.766044, 0.642788, 1, -9.99331e-017, 4.45334e-008, -8.99604, 10.0157, 8.46589 )
-projection = 1
-current = true
-size = 8.14616
-
-[node name="Luz" type="Spatial" parent="Control" instance=ExtResource( 9 )]
+[node name="Luz" parent="Control" instance=ExtResource( 10 )]
 transform = Transform( 3.41145e-008, 0.642788, -0.766044, -2.86255e-008, 0.766044, 0.642788, 1, -9.99331e-017, 4.45334e-008, -8.99604, 10.0157, 8.46589 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Control"]
 environment = SubResource( 1 )
 
-[node name="Scene Root" type="Spatial" parent="Control" instance=ExtResource( 10 )]
+[node name="Scene Root" parent="Control" instance=ExtResource( 11 )]
 transform = Transform( 0.50744, -0.0203233, 0.861448, 0, 0.999722, 0.0235855, -0.861687, -0.0119682, 0.507299, -0.893176, 1.49336, 8.87633 )
+
+[node name="Camera" type="Camera" parent="Control"]
+transform = Transform( 3.41145e-008, 0.642788, -0.766044, -2.86255e-008, 0.766044, 0.642788, 1, 1.77636e-015, 4.45333e-008, -8.99604, 10.0157, 8.46589 )
+projection = 1
+current = true
+size = 8.14616
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
 "anims/New Anim" = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
-stream = ExtResource( 11 )
+stream = ExtResource( 12 )
 autoplay = true
 
 [connection signal="toggled" from="Language" to="." method="_on_Language_toggled"]

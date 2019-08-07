@@ -9,6 +9,7 @@ func _process(delta):
 	if is_colliding():
 		for i in group.size()-1:
 			if get_collider().is_in_group(group[i]):
+				print(group[i])
 #				get_parent().get_node("Mouse Follow").event = false
 				get_parent().get_parent().get_node("Control").event(i)
 				play_event(i)

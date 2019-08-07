@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Assets/Models/Boat.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Materials/boat_shader.tres" type="Material" id=2]
@@ -17,12 +17,13 @@
 [ext_resource path="res://Ui/mouse/mouse.tscn" type="PackedScene" id=15]
 [ext_resource path="res://exports card/ui-08.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Models/Passangers.gd" type="Script" id=17]
-[ext_resource path="res://Ui/people.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Models/Sprite3D.gd" type="Script" id=19]
-[ext_resource path="res://Assets/Models/Passagenrs.gd" type="Script" id=20]
-[ext_resource path="res://Ui/compass/compass.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Models/arrow.gd" type="Script" id=22]
-[ext_resource path="res://sound/sfx-ogg/Pop_Pop_Boat_Engine.wav" type="AudioStream" id=23]
+[ext_resource path="res://Assets/sprite/Sprite3D1.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Ui/people.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Models/Sprite3D.gd" type="Script" id=20]
+[ext_resource path="res://Assets/Models/Passagenrs.gd" type="Script" id=21]
+[ext_resource path="res://Ui/compass/compass.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Models/arrow.gd" type="Script" id=23]
+[ext_resource path="res://sound/sfx-ogg/Pop_Pop_Boat_Engine.wav" type="AudioStream" id=24]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1, 1.92066 )
@@ -858,68 +859,73 @@ scale = Vector2( 0.400321, 0.400321 )
 texture = ExtResource( 16 )
 
 [node name="Passangers" type="Spatial" parent="Spatial"]
-editor/display_folded = true
 script = ExtResource( 17 )
 
-[node name="Sprite3D1" type="Sprite3D" parent="Spatial/Passangers"]
-transform = Transform( 0.5, -3.34075e-022, 0, -3.34075e-022, 0.5, 0, 0, 0, 0.5, 1.2922e-008, -0.14781, 0.87176 )
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 18 )
-script = ExtResource( 19 )
+[node name="Sprite3D1" parent="Spatial/Passangers" instance=ExtResource( 18 )]
+alpha_cut = 2
 
 [node name="Sprite3D2" type="Sprite3D" parent="Spatial/Passangers"]
 transform = Transform( 0.5, -3.34075e-022, 0, -3.34075e-022, 0.5, 0, 0, 0, 0.5, 0.563691, -0.14781, 1.05695 )
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 18 )
-script = ExtResource( 19 )
+alpha_cut = 2
+texture = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="Sprite3D3" type="Sprite3D" parent="Spatial/Passangers"]
 transform = Transform( 0.5, -3.34075e-022, 0, -3.34075e-022, 0.5, 0, 0, 0, 0.5, -0.54376, -0.14781, 1.17992 )
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 18 )
-script = ExtResource( 19 )
+alpha_cut = 2
+texture = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="Sprite3D4" type="Sprite3D" parent="Spatial/Passangers"]
 transform = Transform( 0.5, -3.34075e-022, 0, -3.34075e-022, 0.5, 0, 0, 0, 0.5, -8.45216e-009, 0.0966814, 0.0537233 )
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 18 )
-script = ExtResource( 19 )
+alpha_cut = 2
+texture = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="Sprite3D5" type="Sprite3D" parent="Spatial/Passangers"]
 transform = Transform( 0.5, -3.34075e-022, 0, -3.34075e-022, 0.5, 0, 0, 0, 0.5, 1.2922e-008, -0.14781, 1.35507 )
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 18 )
-script = ExtResource( 19 )
+alpha_cut = 2
+texture = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="Sprite3D6" type="Sprite3D" parent="Spatial/Passangers"]
 transform = Transform( 0.5, -3.34075e-022, 0, -3.34075e-022, 0.5, 0, 0, 0, 0.5, 1.2922e-008, -0.14781, -0.989861 )
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 18 )
-script = ExtResource( 19 )
+alpha_cut = 2
+texture = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="Sprite3D7" type="Sprite3D" parent="Spatial/Passangers"]
 transform = Transform( 0.5, -3.34075e-022, 0, -3.34075e-022, 0.5, 0, 0, 0, 0.5, 0.78924, -0.14781, 0.0634641 )
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 18 )
-script = ExtResource( 19 )
+alpha_cut = 2
+texture = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="Sprite3D8" type="Sprite3D" parent="Spatial/Passangers"]
 transform = Transform( 0.5, -3.34075e-022, 0, -3.34075e-022, 0.5, 0, 0, 0, 0.5, -0.625234, -0.147811, -0.873523 )
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 18 )
-script = ExtResource( 19 )
+alpha_cut = 2
+texture = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="Sprite3D9" type="Sprite3D" parent="Spatial/Passangers"]
 transform = Transform( 0.5, -3.34075e-022, 0, -3.34075e-022, 0.5, 0, 0, 0, 0.5, 1.2922e-008, -0.14781, 1.38113 )
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 18 )
-script = ExtResource( 19 )
+alpha_cut = 2
+texture = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="Sprite3D10" type="Sprite3D" parent="Spatial/Passangers"]
 transform = Transform( 0.5, -3.34075e-022, 0, -3.34075e-022, 0.5, 0, 0, 0, 0.5, 0.185924, -0.147811, -1.60515 )
 modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 18 )
-script = ExtResource( 19 )
+alpha_cut = 2
+texture = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -934,7 +940,7 @@ text = "passangers:
 "
 align = 1
 valign = 1
-script = ExtResource( 20 )
+script = ExtResource( 21 )
 
 [node name="Number" type="Label" parent="CanvasLayer/Passagenrs"]
 margin_left = 79.0926
@@ -949,7 +955,7 @@ valign = 1
 [node name="compass" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 96.3632, 584.856 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 21 )
+texture = ExtResource( 22 )
 region_enabled = true
 region_rect = Rect2( 27, 165, 198, 72 )
 
@@ -959,14 +965,14 @@ scale = Vector2( 2, 0.4 )
 
 [node name="arrow" type="Sprite" parent="CanvasLayer/compass/Node2D"]
 position = Vector2( 0.370224, 1.01978 )
-texture = ExtResource( 21 )
+texture = ExtResource( 22 )
 offset = Vector2( -0.355659, -17.8569 )
 region_enabled = true
 region_rect = Rect2( 104, 53, 42, 42 )
-script = ExtResource( 22 )
+script = ExtResource( 23 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 23 )
+stream = ExtResource( 24 )
 volume_db = -30.0
 autoplay = true
 

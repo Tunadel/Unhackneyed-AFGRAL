@@ -12,6 +12,7 @@ var cunrret
 var gameover = preload("res://game_over.gd").new()
 var language = "english"
 var button = 0
+var game_over = false
 
 func _ready():
 	self.hide()
@@ -44,6 +45,8 @@ func load_Stats():
 			text = get_node("Languages").english
 		"french":
 			text = get_node("Languages").french
+		"portuguese":
+			text = get_node("Languages").portuguese
 
 func get_Stats():
 	text = [
@@ -78,11 +81,21 @@ func refuge(var c = 0):
 	
 
 func _on_Language_button_down():
-	match language:
-		"english":
-			language = "french"
-		"french":
-			language = "english"
+	language = "french"
+	load_Stats()
+	event_selector(cunrret)
+	cosequence()
+	pass # Replace with function body.
+	
+func _on_Language2_button_down():
+	language = "english"
+	load_Stats()
+	event_selector(cunrret)
+	cosequence()
+	pass # Replace with function body.
+
+func _on_Language3_button_down():
+	language = "portuguese"
 	load_Stats()
 	event_selector(cunrret)
 	cosequence()
@@ -91,6 +104,8 @@ func _on_Language_button_down():
 func _on_Button4_button_down():
 	self.hide()
 	get_tree().set_pause(false)
+	if game_over:
+		get_tree().change_scene("res://Ui/Game OVer.tscn")
 	pass # Replace with function body.
 
 func medkit(var boolean):
@@ -134,11 +149,12 @@ func action(var a,var b):
 				2:
 					refuge(-10)
 				3:
-					get_tree().change_scene("res://Ui/Game OVer.tscn")
+					game_over()
+					
 		4:
 			match b:
 				1:
-					get_tree().change_scene("res://Ui/Game OVer.tscn")
+					game_over()
 				2:
 					refuge(0)
 				3:
@@ -156,8 +172,10 @@ func action(var a,var b):
 			match b:
 				1:
 					refuge(15)
+					get_node("Consequence/Card/Label2").set_text("you gained 15 refuges")
 				2:
 					refuge(30)
+					get_node("Consequence/Card/Label2").set_text("you gained 30 refuges")
 				3:
 					refuge(0)
 		7:
@@ -165,7 +183,7 @@ func action(var a,var b):
 				1:
 					refuge(-30)
 				2:
-					get_tree().change_scene("res://Ui/Game OVer.tscn")
+					game_over()
 				3:
 					refuge(-10)
 		8:
@@ -184,12 +202,6 @@ func action(var a,var b):
 					refuge(0)
 				3:
 					refuge(-10)
-#		11:
-#			match b:
-#				1:
-#					get_tree().change_scene("res://Ui/Game OVer.tscn")
-#				3:
-#					refuge(-20)
 		11:
 			match b :
 				1:
@@ -203,10 +215,14 @@ func action(var a,var b):
 				1:
 					refuge(-10)
 				2:
-					get_tree().change_scene("res://Ui/Game OVer.tscn")
+					game_over()
 				3:
 					refuge(-30)
 	get_node("Control").hide()
 	get_node("Consequence").show()
 	cosequence()
+
+func game_over():
+	get_node("Consequence/Card/Label2").set_text("you lost the boat")
+	game_over = true
 

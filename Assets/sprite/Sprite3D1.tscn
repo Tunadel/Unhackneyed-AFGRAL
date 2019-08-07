@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Ui/people.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Models/Sprite3D.gd" type="Script" id=2]
+
+[node name="Sprite3D1" type="Sprite3D"]
+transform = Transform( 0.5, -3.34075e-022, 0, -3.34075e-022, 0.5, 0, 0, 0, 0.5, 1.2922e-008, -0.14781, 0.87176 )
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
