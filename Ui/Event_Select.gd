@@ -116,7 +116,6 @@ func medkit(var boolean):
 		get_parent().get_node("medikit").hide()
 
 func action(var a,var b):
-	button = b
 	match a:
 		0:
 			match b:
@@ -191,8 +190,12 @@ func action(var a,var b):
 				1:
 					refuge(-10)
 				2:
-					refuge(0)
+					if get_parent().get_node("medikit").is_visible():
+						refuge(0)
+					else:
+						$Timer.start()
 				3:
+					$Timer.start()
 					refuge(0)
 		10:
 			match b:
@@ -226,3 +229,8 @@ func game_over():
 	get_node("Consequence/Card/Label2").set_text("you lost the boat")
 	game_over = true
 
+
+
+func _on_Timer_timeout():
+	refuge(-1)
+	pass # Replace with function body.
