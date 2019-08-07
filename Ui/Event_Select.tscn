@@ -8,8 +8,8 @@
 [ext_resource path="res://Ui/Button.gd" type="Script" id=6]
 [ext_resource path="res://exports card/ui-02.png" type="Texture" id=7]
 [ext_resource path="res://Ui/Language.tscn" type="PackedScene" id=8]
-[ext_resource path="res://exports card/ui-06.png" type="Texture" id=9]
-[ext_resource path="res://exports card/ui-05.png" type="Texture" id=10]
+[ext_resource path="res://exports card/ui-05.png" type="Texture" id=9]
+[ext_resource path="res://exports card/ui-05 - Copia.png" type="Texture" id=10]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -280,7 +280,7 @@ margin_right = 1037.92
 margin_bottom = 260.621
 rect_scale = Vector2( 0.7, 0.7 )
 toggle_mode = false
-texture_pressed = ExtResource( 9 )
+texture_pressed = null
 
 [node name="Language2" parent="." instance=ExtResource( 8 )]
 margin_left = 821.075
@@ -289,7 +289,8 @@ margin_right = 936.075
 margin_bottom = 259.621
 rect_scale = Vector2( 0.7, 0.7 )
 toggle_mode = false
-texture_normal = ExtResource( 10 )
+texture_normal = ExtResource( 9 )
+texture_pressed = null
 
 [node name="Language3" parent="." instance=ExtResource( 8 )]
 margin_left = 722.919
@@ -298,7 +299,7 @@ margin_right = 821.919
 margin_bottom = 261.621
 rect_scale = Vector2( 0.7, 0.7 )
 toggle_mode = false
-texture_normal = null
+texture_normal = ExtResource( 10 )
 texture_pressed = null
 
 [connection signal="button_down" from="Control/Card/Button" to="." method="_on_Button_button_down"]

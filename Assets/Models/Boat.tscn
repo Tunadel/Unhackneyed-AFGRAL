@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Assets/Models/Boat.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Materials/boat_shader.tres" type="Material" id=2]
@@ -21,9 +21,10 @@
 [ext_resource path="res://Ui/people.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Models/Sprite3D.gd" type="Script" id=20]
 [ext_resource path="res://Assets/Models/Passagenrs.gd" type="Script" id=21]
-[ext_resource path="res://Ui/compass/compass.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Models/arrow.gd" type="Script" id=23]
-[ext_resource path="res://sound/sfx-ogg/Pop_Pop_Boat_Engine.wav" type="AudioStream" id=24]
+[ext_resource path="res://exports card/ui-07.png" type="Texture" id=22]
+[ext_resource path="res://exports card/ui-09.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Models/arrow.gd" type="Script" id=24]
+[ext_resource path="res://sound/sfx-ogg/Pop_Pop_Boat_Engine.wav" type="AudioStream" id=25]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1, 1, 1.92066 )
@@ -953,26 +954,25 @@ align = 1
 valign = 1
 
 [node name="compass" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 96.3632, 584.856 )
+position = Vector2( 65.412, 548.203 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 22 )
 region_enabled = true
-region_rect = Rect2( 27, 165, 198, 72 )
+region_rect = Rect2( 9, 2, 187, 198 )
 
 [node name="Node2D" type="Node2D" parent="CanvasLayer/compass"]
 position = Vector2( 0.809174, -16.1018 )
-scale = Vector2( 2, 0.4 )
 
 [node name="arrow" type="Sprite" parent="CanvasLayer/compass/Node2D"]
-position = Vector2( 0.370224, 1.01978 )
-texture = ExtResource( 22 )
-offset = Vector2( -0.355659, -17.8569 )
+position = Vector2( -2.86284, 16.219 )
+texture = ExtResource( 23 )
+offset = Vector2( 11.806, -2.18612 )
 region_enabled = true
-region_rect = Rect2( 104, 53, 42, 42 )
-script = ExtResource( 23 )
+region_rect = Rect2( 78, 33, 68, 123 )
+script = ExtResource( 24 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 24 )
+stream = ExtResource( 25 )
 volume_db = -30.0
 autoplay = true
 
