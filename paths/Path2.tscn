@@ -14,7 +14,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00657463, -0.474736, -0.229
 curve = SubResource( 1 )
 
 [node name="PathFollow" parent="." instance=ExtResource( 1 )]
-transform = Transform( -0.862179, 0.0253614, 0.505965, 0.0244761, 0.999666, -0.00839986, -0.50601, 0.00514177, -0.862509, -11.6977, 0.500101, 29.8392 )
+transform = Transform( 0.956629, 0.0114152, -0.291081, -0.00990342, 0.99993, 0.00666606, 0.291137, -0.00349418, 0.956671, -11.6977, 0.500101, 29.8392 )
 offset = 28.68
 
 [node name="Scene Root" parent="PathFollow" instance=ExtResource( 2 )]

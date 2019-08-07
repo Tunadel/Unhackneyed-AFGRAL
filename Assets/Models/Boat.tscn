@@ -853,6 +853,7 @@ expand = true
 [node name="mouse" parent="Spatial" instance=ExtResource( 15 )]
 
 [node name="medikit" type="Sprite" parent="Spatial"]
+visible = false
 position = Vector2( 65.8166, 450 )
 scale = Vector2( 0.400321, 0.400321 )
 texture = ExtResource( 16 )
