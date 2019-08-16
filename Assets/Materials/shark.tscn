@@ -7,7 +7,7 @@ albedo_color = Color( 0.470588, 0.415686, 0.415686, 1 )
 metallic_specular = 0.2
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 3.01538, 1, 1 )
+extents = Vector3( 8.47715, 7.09767, 9.05465 )
 
 [node name="Scene Root" instance=ExtResource( 1 )]
 

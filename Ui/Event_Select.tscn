@@ -274,18 +274,18 @@ autowrap = true
 
 [node name="Language" parent="." instance=ExtResource( 8 )]
 margin_left = 922.919
-margin_top = 154.621
+margin_top = 161.48
 margin_right = 1037.92
-margin_bottom = 260.621
+margin_bottom = 267.48
 rect_scale = Vector2( 0.7, 0.7 )
 toggle_mode = false
 texture_pressed = null
 
 [node name="Language2" parent="." instance=ExtResource( 8 )]
 margin_left = 821.075
-margin_top = 153.621
+margin_top = 160.48
 margin_right = 936.075
-margin_bottom = 259.621
+margin_bottom = 266.48
 rect_scale = Vector2( 0.7, 0.7 )
 toggle_mode = false
 texture_normal = ExtResource( 9 )
@@ -293,9 +293,9 @@ texture_pressed = null
 
 [node name="Language3" parent="." instance=ExtResource( 8 )]
 margin_left = 722.919
-margin_top = 155.621
-margin_right = 821.919
-margin_bottom = 261.621
+margin_top = 162.48
+margin_right = 837.919
+margin_bottom = 268.48
 rect_scale = Vector2( 0.7, 0.7 )
 toggle_mode = false
 texture_normal = ExtResource( 10 )

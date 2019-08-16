@@ -192,6 +192,7 @@ func action(var a,var b):
 				2:
 					if get_parent().get_node("medikit").is_visible():
 						refuge(0)
+						get_parent().get_node("medikit").set_visible(false)
 					else:
 						$Timer.start()
 				3:

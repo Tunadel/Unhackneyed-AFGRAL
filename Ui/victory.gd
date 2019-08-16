@@ -12,11 +12,7 @@ func _ready():
 
 
 func _on_Language_toggled(button_pressed):
-	match language:
-		"english":
-			language = "french"
-		"french":
-			language = "english"
+	language = "french"
 	load_Stats()
 	load_lingo()
 	pass # Replace with function body.
@@ -28,6 +24,26 @@ func load_Stats():
 			text = get_node("Languages").english
 		"french":
 			text = get_node("Languages").french
+		"portuguese":
+			text = get_node("Languages").portuguese
 
 func load_lingo():
 	get_node("Label").set_text(str(text["Ending"]))
+
+func _on_Language4_button_down():
+	language = "portuguese"
+	load_Stats()
+	load_lingo()
+	pass # Replace with function body.
+
+func _on_Language3_button_down():
+	language = "english"
+	load_Stats()
+	load_lingo()
+	pass # Replace with function body.
+
+func _on_Language2_button_down():
+	language = "french"
+	load_Stats()
+	load_lingo()
+	pass # Replace with function body.
