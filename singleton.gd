@@ -6,7 +6,6 @@ var language = ""
 
 func _input(event):
 	if get_node("/root").has_node("Control"):
-		print(get_node("/root/Control").language)
 		language = get_node("/root/Control").language
 	if get_node("/root").has_node("Main-Lvl/Boat/Spatial/Control"):
 		get_node("/root/Main-Lvl/Boat/Spatial/Control").language = language
