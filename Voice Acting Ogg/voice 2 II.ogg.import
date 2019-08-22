@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/voice 2 II.ogg-c026db1c704592f6ad0ef1c720890795.oggstr"
+
+[deps]
+
+source_file="res://Voice Acting Ogg/voice 2 II.ogg"
+dest_files=[ "res://.import/voice 2 II.ogg-c026db1c704592f6ad0ef1c720890795.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

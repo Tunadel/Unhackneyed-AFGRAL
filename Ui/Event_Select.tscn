@@ -82,6 +82,12 @@ margin_bottom = 320.0
 flat = true
 script = ExtResource( 6 )
 
+[node name="Sprite1" type="Sprite" parent="Control/Card"]
+modulate = Color( 1, 1, 1, 0.501961 )
+position = Vector2( 24.8639, 121.747 )
+scale = Vector2( 0.5, 0.5 )
+centered = false
+
 [node name="Card2" type="TextureRect" parent="Control"]
 anchor_left = 0.5
 anchor_top = 1.0
@@ -126,6 +132,12 @@ valign = 2
 autowrap = true
 clip_text = true
 
+[node name="Sprite2" type="Sprite" parent="Control/Card2"]
+modulate = Color( 1, 1, 1, 0.501961 )
+position = Vector2( 24.8639, 121.747 )
+scale = Vector2( 0.5, 0.5 )
+centered = false
+
 [node name="Button" type="Button" parent="Control/Card2"]
 pause_mode = 2
 margin_left = 1.6842
@@ -158,6 +170,12 @@ margin_right = 204.0
 margin_bottom = 326.0
 texture = ExtResource( 4 )
 
+[node name="Sprite3" type="Sprite" parent="Control/Card3"]
+modulate = Color( 1, 1, 1, 0.501961 )
+position = Vector2( 24.8638, 121.747 )
+scale = Vector2( 0.5, 0.5 )
+centered = false
+
 [node name="Label" type="Label" parent="Control/Card3"]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -187,6 +205,7 @@ flat = true
 script = ExtResource( 6 )
 
 [node name="Consequence" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 100.0
@@ -302,6 +321,9 @@ texture_normal = ExtResource( 10 )
 texture_pressed = null
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
 
 [connection signal="button_down" from="Control/Card/Button" to="." method="_on_Button_button_down"]
 [connection signal="mouse_entered" from="Control/Card/Button" to="Control/Card/Button" method="_on_Button_mouse_entered"]

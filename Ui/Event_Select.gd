@@ -31,6 +31,11 @@ func event_selector(var i):
 	$Control/Card/Label.set_text(event[i][0])
 	$Control/Card2/Label.set_text(event[i][1])
 	$Control/Card3/Label.set_text(event[i][2])
+	$Control/Card/Sprite1.set_texture(load("res://Ui/Events Cards Assets-20190822T024226Z-001/Events Cards Assets/"+str(i+1)+"-I.png"))
+	$Control/Card2/Sprite2.set_texture(load("res://Ui/Events Cards Assets-20190822T024226Z-001/Events Cards Assets/"+str(i+1)+"-II.png"))
+	$Control/Card3/Sprite3.set_texture(load("res://Ui/Events Cards Assets-20190822T024226Z-001/Events Cards Assets/"+str(i+1)+"-III.png"))
+	$AudioStreamPlayer.stream = load("res://Voice Acting Ogg/voice "+str(i+1)+".ogg")
+	$AudioStreamPlayer._set_playing(true)
 	$Label.set_text(event[i][3])
 	cunrret = i
 
@@ -116,6 +121,7 @@ func medkit(var boolean):
 		get_parent().get_node("medikit").hide()
 
 func action(var a,var b):
+	audio_response(a,b+1)
 	match a:
 		0:
 			match b:
@@ -230,8 +236,18 @@ func game_over():
 	get_node("Consequence/Card/Label2").set_text("you lost the boat")
 	game_over = true
 
-
+func audio_response(var a,var b):
+	match b:
+		1:
+			$AudioStreamPlayer.stream = load("res://Voice Acting Ogg/voice "+str(a+1)+" I.ogg")
+		2:
+			$AudioStreamPlayer.stream = load("res://Voice Acting Ogg/voice "+str(a+1)+" II.ogg")
+		3:
+			$AudioStreamPlayer.stream = load("res://Voice Acting Ogg/voice "+str(a+1)+" III.ogg")
+	$AudioStreamPlayer._set_playing(true)
 
 func _on_Timer_timeout():
-	refuge(-1)
+	var r = int(get_parent().get_parent().get_node("CanvasLayer/Passagenrs/Number").get_text())
+	r -= 1
+	get_parent().get_parent().get_node("CanvasLayer/Passagenrs/Number").set_text(str(r))
 	pass # Replace with function body.
