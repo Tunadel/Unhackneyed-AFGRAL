@@ -784,7 +784,6 @@ color = Color( 0, 1, 0.0392157, 1 )
 polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [node name="Spatial" type="Spatial" parent="Spatial"]
-editor/display_folded = true
 transform = Transform( 1, -6.6815e-022, 0, -6.6815e-022, 1, 0, 0, 0, 1, 4.67705e-022, -0.7, 0 )
 
 [node name="colision_detection0" parent="Spatial/Spatial" instance=ExtResource( 9 )]

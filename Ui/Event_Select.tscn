@@ -205,7 +205,6 @@ flat = true
 script = ExtResource( 6 )
 
 [node name="Consequence" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 100.0

@@ -108,6 +108,7 @@ func _on_Language3_button_down():
 
 func _on_Button4_button_down():
 	self.hide()
+	$AudioStreamPlayer._set_playing(false)
 	get_tree().set_pause(false)
 	if game_over:
 		get_tree().change_scene("res://Ui/Game OVer.tscn")
