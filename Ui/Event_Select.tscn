@@ -26,6 +26,7 @@ margin_bottom = 0.9025
 color = Color( 0, 0, 0, 0.392157 )
 
 [node name="Control" type="Control" parent="."]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 100.0
@@ -205,6 +206,7 @@ flat = true
 script = ExtResource( 6 )
 
 [node name="Consequence" type="Control" parent="."]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 100.0
@@ -322,6 +324,10 @@ texture_pressed = null
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
 autoplay = true
 
 [connection signal="button_down" from="Control/Card/Button" to="." method="_on_Button_button_down"]

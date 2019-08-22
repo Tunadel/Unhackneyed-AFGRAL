@@ -254,10 +254,10 @@ tracks/14/loop_wrap = true
 tracks/14/imported = false
 tracks/14/enabled = true
 tracks/14/keys = {
-"times": PoolRealArray( 10.9, 12 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 10.9, 12 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ true, true, false ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("fundo:color")
@@ -431,7 +431,7 @@ color = Color( 0, 0, 0, 0.999999 )
 
 [node name="Label2" type="Label" parent="fundo"]
 visible = false
-modulate = Color( 1, 1, 1, 0.0909091 )
+modulate = Color( 1, 1, 1, 5.4186e-008 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -447,7 +447,7 @@ align = 1
 
 [node name="Label" type="Label" parent="fundo"]
 visible = false
-modulate = Color( 0.172906, 0.172906, 0.172906, 0.0909091 )
+modulate = Color( 0.0901961, 0.0901961, 0.0901961, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -485,7 +485,7 @@ align = 1
 
 [node name="Label4" type="Label" parent="fundo/Control"]
 visible = false
-modulate = Color( 1, 1, 1, 0.7 )
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -500,7 +500,7 @@ align = 1
 
 [node name="Label5" type="Label" parent="fundo/Control"]
 visible = false
-modulate = Color( 1, 1, 1, 0.7 )
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -220.228
@@ -513,7 +513,7 @@ align = 1
 
 [node name="Label6" type="Label" parent="fundo/Control"]
 visible = false
-modulate = Color( 1, 1, 1, 0.7 )
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -528,7 +528,7 @@ align = 1
 
 [node name="Label7" type="Label" parent="fundo/Control"]
 visible = false
-modulate = Color( 1, 1, 1, 0.7 )
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5

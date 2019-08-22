@@ -201,10 +201,14 @@ func action(var a,var b):
 						refuge(0)
 						get_parent().get_node("medikit").set_visible(false)
 					else:
+						$AudioStreamPlayer2.set_stream(load("res://sound/sfx-ogg/Coughs_Combined.ogg"))
+						$AudioStreamPlayer2._set_playing(true) 
 						$Timer.start()
 				3:
 					$Timer.start()
 					refuge(0)
+					$AudioStreamPlayer2.set_stream(load("res://sound/sfx-ogg/Coughs_Combined.ogg"))
+					$AudioStreamPlayer2._set_playing(true) 
 		10:
 			match b:
 				1:
