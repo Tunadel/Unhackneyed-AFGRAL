@@ -31,12 +31,12 @@ func event_selector(var i):
 	$Control/Card/Label.set_text(event[i][0])
 	$Control/Card2/Label.set_text(event[i][1])
 	$Control/Card3/Label.set_text(event[i][2])
+	$Label.set_text(event[i][3])
 	$Control/Card/Sprite1.set_texture(load("res://Ui/Events Cards Assets-20190822T024226Z-001/Events Cards Assets/"+str(i+1)+"-I.png"))
 	$Control/Card2/Sprite2.set_texture(load("res://Ui/Events Cards Assets-20190822T024226Z-001/Events Cards Assets/"+str(i+1)+"-II.png"))
 	$Control/Card3/Sprite3.set_texture(load("res://Ui/Events Cards Assets-20190822T024226Z-001/Events Cards Assets/"+str(i+1)+"-III.png"))
 	$AudioStreamPlayer.stream = load("res://Voice Acting Ogg/voice "+str(i+1)+".ogg")
 	$AudioStreamPlayer._set_playing(true)
-	$Label.set_text(event[i][3])
 	cunrret = i
 
 func save_Stats():
@@ -62,21 +62,28 @@ func get_Stats():
 	]
 
 func _on_Button_button_down():
+	cosequence(1)
 	action(cunrret,1)
 	pass # Replace with function body.
 
 func _on_Button2_button_down():
+	cosequence(2)
 	action(cunrret,2)
 	pass # Replace with function body.
 
 func _on_Button3_button_down():
+	cosequence(3)
 	action(cunrret,3)
 	pass # Replace with function body.
 #	get_tree().set_pause(false)
 
-func cosequence():
+var current_consequence = 0
+
+func cosequence(var b):
+	audio_response(cunrret, b)
+	current_consequence  = b
 	consequence = text.cosequence
-	get_node("Consequence/Card/Label").set_text(consequence[cunrret][button-1])
+	get_node("Consequence/Card/Label").set_text(consequence[cunrret][b-1])
 
 func refuge(var c = 0):
 	var r = int(get_parent().get_parent().get_node("CanvasLayer/Passagenrs/Number").get_text())
@@ -89,21 +96,21 @@ func _on_Language_button_down():
 	language = "french"
 	load_Stats()
 	event_selector(cunrret)
-	cosequence()
+	cosequence(current_consequence)
 	pass # Replace with function body.
 	
 func _on_Language2_button_down():
 	language = "english"
 	load_Stats()
 	event_selector(cunrret)
-	cosequence()
+	cosequence(current_consequence)
 	pass # Replace with function body.
 
 func _on_Language3_button_down():
 	language = "portuguese"
 	load_Stats()
 	event_selector(cunrret)
-	cosequence()
+	cosequence(current_consequence)
 	pass # Replace with function body.
 
 func _on_Button4_button_down():
@@ -122,7 +129,8 @@ func medkit(var boolean):
 		get_parent().get_node("medikit").hide()
 
 func action(var a,var b):
-	audio_response(a,b+1)
+	audio_response(a,b)
+	$Label.set_text(event[cunrret][b-1])
 	match a:
 		0:
 			match b:
@@ -235,7 +243,6 @@ func action(var a,var b):
 					refuge(-30)
 	get_node("Control").hide()
 	get_node("Consequence").show()
-	cosequence()
 
 func game_over():
 	get_node("Consequence/Card/Label2").set_text("you lost the boat")
