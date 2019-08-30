@@ -11,5 +11,5 @@ dest_files=[ "res://.import/voice 1 III.ogg-b57d40ecb7d7bad9502acbb622b7ecc1.ogg
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -209,6 +209,7 @@ func action(var a,var b):
 						refuge(0)
 						get_parent().get_node("medikit").set_visible(false)
 					else:
+						get_node("Consequence/Card/Label2").set_text("you don't have medkit")
 						$AudioStreamPlayer2.set_stream(load("res://sound/sfx-ogg/Coughs_Combined.ogg"))
 						$AudioStreamPlayer2._set_playing(true) 
 						$Timer.start()

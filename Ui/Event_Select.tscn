@@ -26,7 +26,6 @@ margin_bottom = 0.9025
 color = Color( 0, 0, 0, 0.392157 )
 
 [node name="Control" type="Control" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 100.0
@@ -35,7 +34,6 @@ margin_right = -100.0
 margin_bottom = -65.0317
 
 [node name="Card" type="TextureRect" parent="Control"]
-editor/display_folded = true
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = -31.9212
@@ -86,12 +84,11 @@ script = ExtResource( 6 )
 
 [node name="Sprite1" type="Sprite" parent="Control/Card"]
 modulate = Color( 1, 1, 1, 0.501961 )
-position = Vector2( 24.8639, 121.747 )
+position = Vector2( 50, 100 )
 scale = Vector2( 0.5, 0.5 )
 centered = false
 
 [node name="Card2" type="TextureRect" parent="Control"]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -137,7 +134,7 @@ clip_text = true
 
 [node name="Sprite2" type="Sprite" parent="Control/Card2"]
 modulate = Color( 1, 1, 1, 0.501961 )
-position = Vector2( 24.8639, 121.747 )
+position = Vector2( 50, 100 )
 scale = Vector2( 0.5, 0.5 )
 centered = false
 
@@ -150,7 +147,6 @@ flat = true
 script = ExtResource( 6 )
 
 [node name="Card3" type="TextureRect" parent="Control"]
-editor/display_folded = true
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -176,7 +172,7 @@ texture = ExtResource( 4 )
 
 [node name="Sprite3" type="Sprite" parent="Control/Card3"]
 modulate = Color( 1, 1, 1, 0.501961 )
-position = Vector2( 24.8638, 121.747 )
+position = Vector2( 50, 100 )
 scale = Vector2( 0.5, 0.5 )
 centered = false
 
@@ -327,6 +323,7 @@ texture_pressed = null
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 12.0
 autoplay = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
